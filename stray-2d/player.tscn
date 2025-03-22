@@ -1,6 +1,6 @@
 [gd_scene load_steps=70 format=3 uid="uid://ci2078p8jaqol"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_gq8d0"]
+[ext_resource type="Script" uid="uid://ddbk2hyukc4a5" path="res://player.gd" id="1_gq8d0"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="1_sdm0f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56mvj"]
