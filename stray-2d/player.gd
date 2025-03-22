@@ -5,16 +5,19 @@ extends CharacterBody2D
 @onready var run_timer: Timer = $runTimer
 
 const SPEED = 50
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -150.0
 const RUN_MULTIPLIER = 2
 
 var can_walk = false
 var running = false
+var jumping = false
 var movement = "walk"
 var idle = "idle"
 
 func _process(_delta: float) -> void:
 	movement = "run" if running else "walk"
+	if velocity.y > 0 and anim.animation != "falling":
+		anim.play("falling")
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
@@ -27,23 +30,31 @@ func apply_gravity(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 func handle_jump() -> void:
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
+		anim.play("jump")
+		jumping = true
+	if anim.frame == 1 and jumping and anim.animation != "falling":
 		velocity.y = JUMP_VELOCITY
+	if anim.animation == "falling" and is_on_floor():
+		jumping = false
 
 func handle_movement() -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction and can_walk:
 		anim.flip_h = direction < 0
-		anim.play(movement)
+		if not jumping:
+			anim.play(movement)
 		idle = "idle stand"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
+		#if is_on_floor():
 		timer.start()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if not running:
 			run_timer.start()
-		anim.play(idle)
+		if not jumping and velocity.y == 0:
+			anim.play(idle)
 	
 	if direction and not can_walk:
 		idle = "stand"
@@ -61,6 +72,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"stand":
 			can_walk = true
 			print("pode andar")
+	#if anim.animation == "falling":
+	#	jumping = false
+		#anim.set_frame_and_progress(4,0)
+		
 
 func _on_run_timer_timeout() -> void:
 	running = true

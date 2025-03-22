@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://ci2078p8jaqol"]
+[gd_scene load_steps=70 format=3 uid="uid://ci2078p8jaqol"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gq8d0"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="1_sdm0f"]
@@ -6,6 +6,22 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56mvj"]
 radius = 7.0
 height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd3rq"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(0, 640, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ol2"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(32, 640, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuens"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(64, 640, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuvro"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(96, 640, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v2vld"]
 atlas = ExtResource("1_sdm0f")
@@ -135,6 +151,10 @@ region = Rect2(64, 608, 32, 32)
 atlas = ExtResource("1_sdm0f")
 region = Rect2(96, 608, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qtcq"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(96, 608, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8lfn"]
 atlas = ExtResource("1_sdm0f")
 region = Rect2(0, 192, 32, 32)
@@ -251,6 +271,23 @@ region = Rect2(224, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wd3rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ol2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuens")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuvro")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_v2vld")
 }, {
 "duration": 1.0,
@@ -300,7 +337,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,10 +392,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ksbun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qtcq")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -479,8 +519,6 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
 animation = &"jump"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="sitTimer" type="Timer" parent="."]
 wait_time = 5.0
