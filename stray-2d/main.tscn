@@ -1,3 +1,32 @@
-[gd_scene format=3 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=5 format=3 uid="uid://dvk7fne1bul2v"]
+
+[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="2_nhd00"]
+[ext_resource type="Texture2D" uid="uid://tmijv8fvpd8u" path="res://icon.svg" id="3_3vj82"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_axhp0")]
+position = Vector2(516, 513)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -43)
+offset = Vector2(48, 0)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("2_nhd00")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(516, 513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_4vx3i")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(39, 281)
+scale = Vector2(20.7656, 4.39063)
+texture = ExtResource("3_3vj82")
