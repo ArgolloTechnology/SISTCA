@@ -517,8 +517,10 @@ shape = SubResource("CapsuleShape2D_56mvj")
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
-animation = &"jump"
+animation = &"falling"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="sitTimer" type="Timer" parent="."]
 wait_time = 5.0

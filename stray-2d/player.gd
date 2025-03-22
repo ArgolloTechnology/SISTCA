@@ -33,7 +33,7 @@ func handle_jump() -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
 		anim.play("jump")
 		jumping = true
-	if anim.frame == 1 and jumping and anim.animation != "falling":
+	if anim.frame == 2 and jumping and anim.animation != "falling":
 		velocity.y = JUMP_VELOCITY
 	if anim.animation == "falling" and is_on_floor():
 		jumping = false
