@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var run_timer: Timer = $runTimer
 
 const SPEED = 50
-const JUMP_VELOCITY = -150.0
+const JUMP_VELOCITY = -300.0
 const RUN_MULTIPLIER = 2
 
 var can_walk = false
@@ -13,9 +13,9 @@ var running = false
 var jumping = false
 var movement = "walk"
 var idle = "idle"
+var scratching = false
 
 func _process(_delta: float) -> void:
-	movement = "run" if running else "walk"
 	if velocity.y > 0 and anim.animation != "falling":
 		anim.play("falling")
 
@@ -39,11 +39,19 @@ func handle_jump() -> void:
 		jumping = false
 
 func handle_movement() -> void:
+	print(movement)
 	var direction := Input.get_axis("ui_left", "ui_right")
-	
 	if direction and can_walk:
+		if is_on_wall():
+			#print("parede")
+			if not scratching:
+				movement = "wall sup"
+				scratching = true
+		else:
+			movement = "run" if running else "walk"
+			scratching = false
 		anim.flip_h = direction < 0
-		if not jumping:
+		if not jumping and is_on_floor():
 			anim.play(movement)
 		idle = "idle stand"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
@@ -72,6 +80,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"stand":
 			can_walk = true
 			print("pode andar")
+			idle = "idle stand"
+	match movement:
+		"wall sup":
+			print("meow")
+			movement = "wall scratch"
 	#if anim.animation == "falling":
 	#	jumping = false
 		#anim.set_frame_and_progress(4,0)
