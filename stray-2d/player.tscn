@@ -1,7 +1,8 @@
-[gd_scene load_steps=94 format=3 uid="uid://ci2078p8jaqol"]
+[gd_scene load_steps=104 format=3 uid="uid://ci2078p8jaqol"]
 
 [ext_resource type="Script" uid="uid://ddbk2hyukc4a5" path="res://player.gd" id="1_gq8d0"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="1_sdm0f"]
+[ext_resource type="Material" uid="uid://d071mx0l1ribo" path="res://scratch.tres" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 7.0
@@ -687,7 +688,55 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_onrkg"]
+offsets = PackedFloat32Array(0.025974)
+colors = PackedColorArray(1, 1, 1, 0.541176)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i3pqv"]
+gradient = SubResource("Gradient_onrkg")
+width = 1
+
+[sub_resource type="Curve" id="Curve_onrkg"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i3pqv"]
+curve = SubResource("Curve_onrkg")
+
+[sub_resource type="Gradient" id="Gradient_hqtel"]
+offsets = PackedFloat32Array(0.3, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sweqy"]
+gradient = SubResource("Gradient_hqtel")
+
+[sub_resource type="Curve" id="Curve_i3pqv"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hqtel"]
+curve = SubResource("Curve_i3pqv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hqtel"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(4, 1, 1)
+angle_min = -90.0
+angle_max = 1.07288e-05
+angle_curve = SubResource("CurveTexture_i3pqv")
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -1.0
+linear_accel_max = 0.999998
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_hqtel")
+color_ramp = SubResource("GradientTexture1D_sweqy")
+
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_gq8d0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -712,6 +761,29 @@ one_shot = true
 [node name="runTimer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
+texture = SubResource("GradientTexture1D_i3pqv")
+process_material = SubResource("ParticleProcessMaterial_hqtel")
+
+[node name="jump" type="GPUParticles2D" parent="."]
+z_index = 2
+emitting = false
+amount = 16
+texture = SubResource("GradientTexture1D_i3pqv")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.75
+process_material = SubResource("ParticleProcessMaterial_hqtel")
+
+[node name="scratch" type="GPUParticles2D" parent="."]
+position = Vector2(7, -7)
+rotation = 0.261799
+emitting = false
+amount = 4
+lifetime = 1.5
+process_material = ExtResource("3_i3pqv")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="sitTimer" to="." method="_on_timer_timeout"]
