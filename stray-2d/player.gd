@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $sitTimer
 @onready var run_timer: Timer = $runTimer
+@onready var moveParticle: GPUParticles2D = $GPUParticles2D
+@onready var jump: GPUParticles2D = $jump
 
 const SPEED = 50
 const JUMP_VELOCITY = -300.0
@@ -28,19 +30,21 @@ func _physics_process(delta: float) -> void:
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		moveParticle.emitting = false
 
 func handle_jump() -> void:
+	print(jump.emitting)
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
 		anim.play("jump")
 		jumping = true
+		jump.restart()
+		jump.emitting = true
 	if anim.frame == 2 and jumping and anim.animation != "falling":
 		velocity.y = JUMP_VELOCITY
 	if anim.animation == "falling" and is_on_floor():
 		jumping = false
 
 func handle_movement() -> void:
-	print(movement)
-	print(scratching)
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction and can_walk:
 		if is_on_wall():
@@ -48,11 +52,19 @@ func handle_movement() -> void:
 			if not scratching:
 				movement = "wall sup"
 				scratching = true
+				moveParticle.emitting = false
 		else:
-			movement = "run" if running else "walk"
+			if running:
+				movement = "run"  
+				moveParticle.amount = 16
+			else: 
+				movement = "walk"
+				moveParticle.amount = 4
 			scratching = false
 		anim.flip_h = direction < 0
 		if not jumping and is_on_floor():
+			if not scratching:
+				moveParticle.emitting = true
 			anim.play(movement)
 		idle = "idle stand"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
@@ -68,6 +80,7 @@ func handle_movement() -> void:
 		if not running:
 			run_timer.start()
 		if not jumping and velocity.y == 0 and not scratching:
+			moveParticle.emitting = false
 			anim.play(idle)
 	
 	if direction and not can_walk:
