@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var run_timer: Timer = $runTimer
 @onready var moveParticle: GPUParticles2D = $GPUParticles2D
 @onready var jump: GPUParticles2D = $jump
+@onready var scratch: GPUParticles2D = $scratch
 
 const SPEED = 50
 const JUMP_VELOCITY = -300.0
@@ -33,7 +34,6 @@ func apply_gravity(delta: float) -> void:
 		moveParticle.emitting = false
 
 func handle_jump() -> void:
-	print(jump.emitting)
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
 		anim.play("jump")
 		jumping = true
@@ -53,6 +53,8 @@ func handle_movement() -> void:
 				movement = "wall sup"
 				scratching = true
 				moveParticle.emitting = false
+				scratch.emitting = true
+				scratch.position.x = scratch.position.x * direction
 		else:
 			if running:
 				movement = "run"  
