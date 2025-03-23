@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://ci2078p8jaqol"]
+[gd_scene load_steps=94 format=3 uid="uid://ci2078p8jaqol"]
 
 [ext_resource type="Script" uid="uid://ddbk2hyukc4a5" path="res://player.gd" id="1_gq8d0"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="1_sdm0f"]
@@ -265,6 +265,38 @@ region = Rect2(192, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gs4h"]
 atlas = ExtResource("1_sdm0f")
 region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(0, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pylmc"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(32, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(64, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tmop"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(96, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ahtn"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(128, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lmhl"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(160, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx0e4"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(192, 1504, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm5j8"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(224, 1504, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("1_sdm0f")
@@ -569,6 +601,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_q13i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pylmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbfsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tmop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ahtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lmhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx0e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm5j8")
+}],
+"loop": false,
+"name": &"wall out",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_n7ghd")
 }, {
 "duration": 1.0,
@@ -638,8 +699,10 @@ shape = SubResource("CircleShape2D_onrkg")
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
-animation = &"wall scratch"
+animation = &"wall out"
 autoplay = "idle"
+frame = 7
+frame_progress = 1.0
 
 [node name="sitTimer" type="Timer" parent="."]
 wait_time = 5.0

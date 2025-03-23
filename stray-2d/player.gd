@@ -40,6 +40,7 @@ func handle_jump() -> void:
 
 func handle_movement() -> void:
 	print(movement)
+	print(scratching)
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction and can_walk:
 		if is_on_wall():
@@ -58,16 +59,21 @@ func handle_movement() -> void:
 		#if is_on_floor():
 		timer.start()
 	else:
+		if movement == "wall scratch":
+			movement = "wall out"
+			anim.play(movement)
+		#scratching = false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if not running:
 			run_timer.start()
-		if not jumping and velocity.y == 0:
+		if not jumping and velocity.y == 0 and not scratching:
 			anim.play(idle)
 	
 	if direction and not can_walk:
 		idle = "stand"
 
 func _on_timer_timeout() -> void:
+	if scratching: pass
 	idle = "sit"
 	can_walk = false
 	running = false
@@ -85,6 +91,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"wall sup":
 			print("meow")
 			movement = "wall scratch"
+		"wall out":
+			scratching = false
 	#if anim.animation == "falling":
 	#	jumping = false
 		#anim.set_frame_and_progress(4,0)
