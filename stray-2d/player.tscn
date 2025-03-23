@@ -696,6 +696,7 @@ rotation = 1.57079
 shape = SubResource("CircleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
