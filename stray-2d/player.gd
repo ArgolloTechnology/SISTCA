@@ -61,6 +61,7 @@ func handle_movement() -> void:
 	else:
 		if movement == "wall scratch":
 			movement = "wall out"
+			can_walk = false
 			anim.play(movement)
 		#scratching = false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -93,6 +94,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			movement = "wall scratch"
 		"wall out":
 			scratching = false
+			can_walk = true
 	#if anim.animation == "falling":
 	#	jumping = false
 		#anim.set_frame_and_progress(4,0)
