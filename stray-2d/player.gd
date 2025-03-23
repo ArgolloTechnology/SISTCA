@@ -53,8 +53,9 @@ func handle_movement() -> void:
 				movement = "wall sup"
 				scratching = true
 				moveParticle.emitting = false
-				scratch.emitting = true
-				scratch.position.x = scratch.position.x * direction
+				#mudar posição de scratch dependendo da direção
+				scratch.position.x = abs(scratch.position.x) * direction
+				scratch.rotation_degrees = 15 if direction > 0 else -15
 		else:
 			if running:
 				movement = "run"  
@@ -68,6 +69,7 @@ func handle_movement() -> void:
 			if not scratching:
 				moveParticle.emitting = true
 			anim.play(movement)
+		
 		idle = "idle stand"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
 		#if is_on_floor():
@@ -107,7 +109,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		"wall sup":
 			print("meow")
 			movement = "wall scratch"
+			scratch.emitting = true
 		"wall out":
+			scratch.emitting = false
 			scratching = false
 			can_walk = true
 	#if anim.animation == "falling":
