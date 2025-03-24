@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://rc2idrlp6x6n"]
+
+[ext_resource type="Texture2D" uid="uid://dg5jb5uil12de" path="res://Sprites/Portoes do baldur/2 Background/5.png" id="1_1knjl"]
+[ext_resource type="Texture2D" uid="uid://dw4o687ubp0uf" path="res://Sprites/Portoes do baldur/2 Background/4.png" id="2_x2f2x"]
+[ext_resource type="Texture2D" uid="uid://urokqt3jp0fs" path="res://Sprites/Portoes do baldur/2 Background/3.png" id="3_sbwnb"]
+[ext_resource type="Texture2D" uid="uid://fy03relcp102" path="res://Sprites/Portoes do baldur/2 Background/2.png" id="4_c8n83"]
+[ext_resource type="Texture2D" uid="uid://bfix2bie046a1" path="res://Sprites/Portoes do baldur/2 Background/1.png" id="5_osk5j"]
+
+[node name="BackGround" type="Node2D"]
+
+[node name="L5" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(288, 0)
+repeat_times = 2
+
+[node name="Sprite" type="Sprite2D" parent="L5"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1knjl")
+
+[node name="L4" type="Parallax2D" parent="."]
+z_index = -2
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(288, 0)
+repeat_times = 2
+
+[node name="Sprite" type="Sprite2D" parent="L4"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_x2f2x")
+
+[node name="L3" type="Parallax2D" parent="."]
+z_index = -3
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(288, 0)
+repeat_times = 2
+
+[node name="Sprite" type="Sprite2D" parent="L3"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_sbwnb")
+
+[node name="L2" type="Parallax2D" parent="."]
+z_index = -4
+scroll_scale = Vector2(0.6, 1)
+repeat_size = Vector2(288, 0)
+repeat_times = 2
+
+[node name="Sprite" type="Sprite2D" parent="L2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_c8n83")
+
+[node name="L1" type="Parallax2D" parent="."]
+z_index = -5
+repeat_size = Vector2(288, 162)
+repeat_times = 2
+
+[node name="Sprite" type="Sprite2D" parent="L1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_osk5j")

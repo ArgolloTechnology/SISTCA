@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_nhd00"]
 [ext_resource type="Texture2D" uid="uid://tmijv8fvpd8u" path="res://icon.svg" id="3_3vj82"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_lquwl"]
-[ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/Portoes do baldur/2 Background/Background.png" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://back_ground.tscn" id="5_lquwl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 
@@ -38,9 +38,5 @@ texture = ExtResource("3_3vj82")
 position = Vector2(492, 421)
 texture = ExtResource("4_lquwl")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
-
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(504, 371)
-texture = ExtResource("5_7mycd")
+[node name="BackGround" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(582, 416)
