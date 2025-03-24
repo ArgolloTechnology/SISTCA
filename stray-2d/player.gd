@@ -39,6 +39,7 @@ func handle_jump() -> void:
 		jumping = true
 		jump.restart()
 		jump.emitting = true
+		scratch.emitting = false
 	if anim.frame == 2 and jumping and anim.animation != "falling":
 		velocity.y = JUMP_VELOCITY
 	if anim.animation == "falling" and is_on_floor():
