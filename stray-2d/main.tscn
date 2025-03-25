@@ -456,7 +456,6 @@ sources/0 = SubResource("TileSetAtlasSource_5vw27")
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_axhp0")]
-z_index = 1
 position = Vector2(226, 473)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
