@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=14 format=3 uid="uid://dvk7fne1bul2v"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_nhd00"]
@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://back_ground.tscn" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
+distance = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("4_7mycd")
@@ -249,7 +252,9 @@ texture = ExtResource("4_7mycd")
 20:9/0 = 0
 21:9/0 = 0
 22:9/0 = 0
+22:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:9/0 = 0
+23:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:9/0 = 0
 0:10/0 = 0
 1:10/0 = 0
@@ -271,7 +276,9 @@ texture = ExtResource("4_7mycd")
 20:10/0 = 0
 21:10/0 = 0
 22:10/0 = 0
+22:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 23:10/0 = 0
+23:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:11/0 = 0
 3:11/0 = 0
 4:11/0 = 0
@@ -503,7 +510,7 @@ texture = ExtResource("4_lquwl")
 [node name="Holofote1" type="Sprite2D" parent="."]
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 1
-position = Vector2(584, 439)
+position = Vector2(584, 440)
 texture = ExtResource("4_lquwl")
 
 [node name="Holofote2" type="Sprite2D" parent="."]
@@ -511,3 +518,23 @@ modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 1
 position = Vector2(712, 440)
 texture = ExtResource("4_lquwl")
+
+[node name="Esgoto" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.227451)
+z_index = 10
+offset_left = 513.0
+offset_top = 335.0
+offset_right = 2313.0
+offset_bottom = 1540.0
+scale = Vector2(0.355363, 0.186016)
+texture = ExtResource("7_5vw27")
+
+[node name="Fumo" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.227451)
+z_index = 10
+offset_left = 513.0
+offset_top = 335.0
+offset_right = 2313.0
+offset_bottom = 1539.0
+scale = Vector2(-0.284923, 0.18698)
+texture = ExtResource("7_272bh")
