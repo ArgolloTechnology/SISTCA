@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var scratch: GPUParticles2D = $scratch
 
 const SPEED = 50
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -275.0
 const RUN_MULTIPLIER = 2
 
 var can_walk = false
@@ -50,7 +50,7 @@ func handle_movement() -> void:
 	if direction and can_walk:
 		if is_on_wall():
 			#print("parede")
-			if not scratching:
+			if not scratching and not jumping and velocity.y == 0:
 				movement = "wall sup"
 				scratching = true
 				moveParticle.emitting = false
@@ -65,6 +65,7 @@ func handle_movement() -> void:
 				movement = "walk"
 				moveParticle.amount = 4
 			scratching = false
+			scratch.emitting = false
 		anim.flip_h = direction < 0
 		if not jumping and is_on_floor():
 			if not scratching:

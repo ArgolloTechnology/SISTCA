@@ -20,6 +20,6 @@ func _process(delta: float) -> void:
 
 	# Interpola suavemente o offset em direção ao alvo
 	if offset.x != target_offset:
-		offset.x = lerp(offset.x, target_offset, .75 * delta)  # Aumente o valor para uma transição mais rápida
+		offset.x = lerp(offset.x, target_offset, 2 * delta)  # Aumente o valor para uma transição mais rápida
 
 	lastPos = global_position.x
