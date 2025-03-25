@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://rc2idrlp6x6n"]
 
-[ext_resource type="Texture2D" uid="uid://dg5jb5uil12de" path="res://Sprites/Portoes do baldur/2 Background/5.png" id="1_1knjl"]
-[ext_resource type="Texture2D" uid="uid://dw4o687ubp0uf" path="res://Sprites/Portoes do baldur/2 Background/4.png" id="2_x2f2x"]
-[ext_resource type="Texture2D" uid="uid://urokqt3jp0fs" path="res://Sprites/Portoes do baldur/2 Background/3.png" id="3_sbwnb"]
-[ext_resource type="Texture2D" uid="uid://fy03relcp102" path="res://Sprites/Portoes do baldur/2 Background/2.png" id="4_c8n83"]
-[ext_resource type="Texture2D" uid="uid://bfix2bie046a1" path="res://Sprites/Portoes do baldur/2 Background/1.png" id="5_osk5j"]
+[ext_resource type="Texture2D" uid="uid://dg5jb5uil12de" path="res://Sprites/Mapa2/2 Background/5.png" id="1_1knjl"]
+[ext_resource type="Texture2D" uid="uid://dw4o687ubp0uf" path="res://Sprites/Mapa2/2 Background/4.png" id="2_x2f2x"]
+[ext_resource type="Texture2D" uid="uid://urokqt3jp0fs" path="res://Sprites/Mapa2/2 Background/3.png" id="3_sbwnb"]
+[ext_resource type="Texture2D" uid="uid://fy03relcp102" path="res://Sprites/Mapa2/2 Background/2.png" id="4_c8n83"]
+[ext_resource type="Texture2D" uid="uid://bfix2bie046a1" path="res://Sprites/Mapa2/2 Background/1.png" id="5_osk5j"]
 
 [node name="BackGround" type="Node2D"]
 

@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var run_timer: Timer = $runTimer
 
 const SPEED = 50
-const JUMP_VELOCITY = -150.0
+const JUMP_VELOCITY = -250.0
 const RUN_MULTIPLIER = 2
 
 var can_walk = false
