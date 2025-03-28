@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var scratch: GPUParticles2D = $scratch
 
 const SPEED = 50
-const JUMP_VELOCITY = -275.0
+const JUMP_VELOCITY = -300.0
 const RUN_MULTIPLIER = 2
 
 var can_walk = false

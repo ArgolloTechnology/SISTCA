@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=7 format=3 uid="uid://br2ysokgmrh8y"]
+[gd_resource type="ParticleProcessMaterial" load_steps=7 format=3 uid="uid://d071mx0l1ribo"]
 
 [sub_resource type="Curve" id="Curve_onrkg"]
 _limits = [-360.0, 360.0, 0.0, 1.0]
