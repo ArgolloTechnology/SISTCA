@@ -56,7 +56,7 @@ func handle_movement() -> void:
 	if direction and can_walk:
 		if is_on_wall():
 			#print("parede")
-			if not scratching:
+			if not scratching and is_on_floor():
 				movement = "wall sup"
 				scratching = true
 				moveParticle.emitting = false
