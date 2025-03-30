@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var moveParticle: GPUParticles2D = $GPUParticles2D
 @onready var jump: GPUParticles2D = $jump
 @onready var scratch: GPUParticles2D = $scratch
+@onready var rest_time: Timer = $restTime
 
 const SPEED = 50
 const JUMP_VELOCITY = -300.0
@@ -27,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_movement()
 	move_and_slide()
+	print(rest_time.time_left)
 
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -75,7 +77,10 @@ func handle_movement() -> void:
 				moveParticle.emitting = true
 			anim.play(movement)
 		
-		idle = "idle stand"
+		if not running:
+			idle = "idle stand"
+		else: 
+			idle = "idle stand run"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
 		#if is_on_floor():
 		timer.start()
@@ -88,6 +93,8 @@ func handle_movement() -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if not running:
 			run_timer.start()
+			if anim.animation == "idle run" and anim.frame == 0:
+				idle = "idle"
 		if not jumping and velocity.y == 0 and not scratching:
 			moveParticle.emitting = false
 			anim.play(idle)
@@ -99,17 +106,21 @@ func _on_timer_timeout() -> void:
 	if scratching: pass
 	idle = "sit"
 	can_walk = false
-	running = false
 	anim.play(idle)
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	match idle:
 		"sit":
-			idle = "idle"
+			if not running:
+				idle = "idle"
+			else:
+				idle = "idle run"
+				rest_time.start()
 		"stand":
 			can_walk = true
 			print("pode andar")
 			idle = "idle stand"
+		
 	match movement:
 		"wall sup":
 			print("meow")
@@ -126,3 +137,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func _on_run_timer_timeout() -> void:
 	running = true
+
+
+func _on_rest_time_timeout() -> void:
+	running = false
