@@ -35,6 +35,3 @@ scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_hqtel")
 color_ramp = SubResource("GradientTexture1D_sweqy")
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.5
