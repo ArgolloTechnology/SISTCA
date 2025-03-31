@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var timer: Timer = $sitTimer
-@onready var run_timer: Timer = $runTimer
-@onready var moveParticle: GPUParticles2D = $GPUParticles2D
-@onready var jump: GPUParticles2D = $jump
-@onready var scratch: GPUParticles2D = $scratch
-@onready var rest_time: Timer = $restTime
+@onready var timer: Timer = $TIMERS/sitTimer
+@onready var run_timer: Timer = $TIMERS/runTimer
+@onready var moveParticle: GPUParticles2D = $VFX/walk
+@onready var jump: GPUParticles2D = $VFX/jump
+@onready var scratch: GPUParticles2D = $VFX/scratch
+@onready var rest_time: Timer = $TIMERS/restTime
 
 const SPEED = 50
 const JUMP_VELOCITY = -300.0
@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_movement()
 	move_and_slide()
-	print(rest_time.time_left)
 
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -52,6 +51,8 @@ func handle_jump() -> void:
 		jumping = false
 
 func handle_movement() -> void:
+	if anim.animation != idle:
+		timer.start()
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction and can_walk:
 		if is_on_wall():
@@ -83,7 +84,6 @@ func handle_movement() -> void:
 			idle = "idle stand run"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
 		#if is_on_floor():
-		timer.start()
 	else:
 		if movement == "wall scratch":
 			movement = "wall out"
@@ -133,11 +133,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	#if anim.animation == "falling":
 	#	jumping = false
 		#anim.set_frame_and_progress(4,0)
-		
 
 func _on_run_timer_timeout() -> void:
 	running = true
 
-
 func _on_rest_time_timeout() -> void:
 	running = false
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("die")
