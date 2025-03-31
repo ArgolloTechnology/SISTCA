@@ -719,6 +719,8 @@ color_ramp = SubResource("GradientTexture1D_sweqy")
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_gq8d0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

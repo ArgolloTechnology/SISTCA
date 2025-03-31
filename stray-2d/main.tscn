@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=17 format=3 uid="uid://dvk7fne1bul2v"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_nhd00"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://killzone.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://pistão.tscn" id="10_4c57u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
@@ -456,8 +457,6 @@ a = Vector2(0, -10)
 
 [node name="Player" parent="." instance=ExtResource("1_axhp0")]
 position = Vector2(226, 473)
-collision_layer = 3
-collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
@@ -551,9 +550,10 @@ scale = Vector2(-0.284923, 0.18698)
 texture = ExtResource("7_272bh")
 
 [node name="Killzone" parent="." instance=ExtResource("9_kek77")]
-position = Vector2(284, 497)
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(14, 5)
 shape = SubResource("SegmentShape2D_kek77")
+
+[node name="Pistão" parent="." instance=ExtResource("10_4c57u")]
+position = Vector2(299, 480)
