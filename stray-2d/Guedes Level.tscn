@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmnffwqewym3r"]
+[gd_scene load_steps=13 format=3 uid="uid://c4hy6cbex15lx"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_1i6yf"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_p7wxo"]
@@ -206,7 +206,6 @@ sources/1 = SubResource("TileSetAtlasSource_p7wxo")
 
 [node name="Player" parent="." instance=ExtResource("1_1i6yf")]
 position = Vector2(226, 473)
-collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
