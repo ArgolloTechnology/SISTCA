@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_movement()
 	move_and_slide()
-	print(rest_time.time_left)
+	
 
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
