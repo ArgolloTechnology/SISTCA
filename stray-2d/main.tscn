@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=15 format=3 uid="uid://dvk7fne1bul2v"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_nhd00"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_7mycd"]
-[ext_resource type="PackedScene" path="res://back_ground.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://back_ground.tscn" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="9_kek77"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
@@ -457,6 +458,7 @@ position = Vector2(226, 473)
 position = Vector2(0, -43)
 offset = Vector2(48, 0)
 zoom = Vector2(4, 4)
+limit_smoothed = true
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("2_nhd00")
@@ -543,3 +545,6 @@ offset_right = 2313.0
 offset_bottom = 1539.0
 scale = Vector2(-0.284923, 0.18698)
 texture = ExtResource("7_272bh")
+
+[node name="Final" parent="." instance=ExtResource("9_kek77")]
+position = Vector2(1241, 495)
