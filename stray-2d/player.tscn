@@ -748,13 +748,11 @@ wait_time = 2.0
 one_shot = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
 z_index = 2
 texture = SubResource("GradientTexture1D_i3pqv")
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 
 [node name="jump" type="GPUParticles2D" parent="."]
-visible = false
 z_index = 2
 emitting = false
 amount = 16
@@ -765,7 +763,6 @@ explosiveness = 0.75
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 
 [node name="scratch" type="GPUParticles2D" parent="."]
-visible = false
 position = Vector2(7, -7)
 rotation = 0.261799
 emitting = false
