@@ -51,10 +51,9 @@ func handle_jump() -> void:
 		jumping = false
 
 func handle_movement() -> void:
-	if anim.animation != idle:
-		timer.start()
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction and can_walk:
+		timer.start()
 		if is_on_wall():
 			if not scratching and is_on_floor():
 				movement = "wall sup"
@@ -101,9 +100,11 @@ func handle_movement() -> void:
 	
 	if direction and not can_walk:
 		idle = "stand"
+	print(timer.time_left)
 
 func _on_timer_timeout() -> void:
-	if scratching: pass
+	if scratching and idle == "idle": pass
+	print("sitd")
 	idle = "sit"
 	can_walk = false
 	anim.play(idle)
