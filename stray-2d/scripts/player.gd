@@ -41,13 +41,11 @@ func handle_jump() -> void:
 		jump.restart()
 		jump.emitting = true
 		scratch.emitting = false
-	if anim.frame == 1 and jumping and anim.animation != "falling":
 		velocity.y = JUMP_VELOCITY
-		anim.frame = 2
 		
 	if anim.animation == "falling" and is_on_floor():
 		jumping = false
-	if anim.animation == "jump" and anim.frame > 2 and is_on_floor():
+	if anim.animation == "jump" and anim.frame > 1 and is_on_floor():
 		jumping = false
 
 func handle_movement() -> void:

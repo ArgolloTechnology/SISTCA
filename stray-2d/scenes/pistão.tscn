@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://xyar82yxh0pv"]
 
-[ext_resource type="Script" uid="uid://cvqogpdwux6ad" path="res://pistao.gd" id="1_b2lu7"]
+[ext_resource type="Script" uid="uid://cvqogpdwux6ad" path="res://scripts/pistao.gd" id="1_b2lu7"]
 [ext_resource type="Texture2D" uid="uid://ca6nia3xby3do" path="res://Sprites/industrial/4 Animated objects/Hammer.png" id="1_r0bnn"]
-[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://killzone.tscn" id="2_r5w03"]
+[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="2_r5w03"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5w03"]
 atlas = ExtResource("1_r0bnn")

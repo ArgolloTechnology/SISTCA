@@ -1,19 +1,19 @@
 [gd_scene load_steps=13 format=3 uid="uid://c4hy6cbex15lx"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_1i6yf"]
-[ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_p7wxo"]
-[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://back_ground.tscn" id="3_6stdn"]
-[ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_dvi35"]
-[ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="6_08tb1"]
-[ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_d2un5"]
-[ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_1i6yf"]
-[ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="8_iuhle"]
+[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_yshs8"]
+[ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_kq37c"]
+[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_45l7v"]
+[ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_41dvb"]
+[ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="5_t8fby"]
+[ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="6_i43la"]
+[ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="7_6kpkc"]
+[ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_keo17"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqyrt"]
-texture = ExtResource("5_dvi35")
+texture = ExtResource("7_6kpkc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -121,7 +121,7 @@ texture = ExtResource("5_dvi35")
 4:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7wxo"]
-texture = ExtResource("8_1i6yf")
+texture = ExtResource("8_keo17")
 0:0/0 = 0
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -204,7 +204,7 @@ sources/1 = SubResource("TileSetAtlasSource_p7wxo")
 
 [node name="Main2" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_1i6yf")]
+[node name="Player" parent="." instance=ExtResource("1_yshs8")]
 position = Vector2(226, 473)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -213,7 +213,7 @@ offset = Vector2(48, 0)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
-script = ExtResource("2_p7wxo")
+script = ExtResource("2_kq37c")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(385, 529)
@@ -221,7 +221,7 @@ position = Vector2(385, 529)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_4vx3i")
 
-[node name="BackGround" parent="." instance=ExtResource("3_6stdn")]
+[node name="BackGround" parent="." instance=ExtResource("3_45l7v")]
 position = Vector2(582, 416)
 
 [node name="Holofote1" type="Sprite2D" parent="."]
@@ -229,14 +229,14 @@ visible = false
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 1
 position = Vector2(584, 440)
-texture = ExtResource("6_08tb1")
+texture = ExtResource("4_41dvb")
 
 [node name="Holofote2" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 1
 position = Vector2(712, 440)
-texture = ExtResource("6_08tb1")
+texture = ExtResource("4_41dvb")
 
 [node name="Esgoto" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
@@ -246,7 +246,7 @@ offset_top = 305.0
 offset_right = 2182.0
 offset_bottom = 1510.0
 scale = Vector2(0.355363, 0.186016)
-texture = ExtResource("7_d2un5")
+texture = ExtResource("5_t8fby")
 
 [node name="Fumo" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
@@ -256,7 +256,7 @@ offset_top = 303.0
 offset_right = 2326.0
 offset_bottom = 1507.0
 scale = Vector2(-0.284923, 0.18698)
-texture = ExtResource("8_iuhle")
+texture = ExtResource("6_i43la")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(512, 335)
