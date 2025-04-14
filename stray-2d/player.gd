@@ -35,7 +35,7 @@ func apply_gravity(delta: float) -> void:
 		moveParticle.emitting = false
 
 func handle_jump() -> void:
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
+	if Input.is_action_just_pressed("ui_up") and is_on_floor() and not jumping:
 		anim.play("jump")
 		jumping = true
 		jump.restart()
