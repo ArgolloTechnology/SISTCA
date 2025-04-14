@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xot8pqy2vyrg"]
+[gd_scene load_steps=16 format=3 uid="uid://cflhox443k4i"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_1i6yf"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_p7wxo"]
@@ -8,11 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_d2un5"]
 [ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_1i6yf"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="8_iuhle"]
+[ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="9_p7wxo"]
+[ext_resource type="PackedScene" path="res://killzone.tscn" id="10_6stdn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqyrt"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7wxo"]
 texture = ExtResource("5_dvi35")
 0:0/0 = 0
 1:0/0 = 0
@@ -120,7 +122,7 @@ texture = ExtResource("5_dvi35")
 3:13/0 = 0
 4:13/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7wxo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6stdn"]
 texture = ExtResource("8_1i6yf")
 0:0/0 = 0
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -199,8 +201,11 @@ texture = ExtResource("8_1i6yf")
 [sub_resource type="TileSet" id="TileSet_1i6yf"]
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lqyrt")
-sources/1 = SubResource("TileSetAtlasSource_p7wxo")
+sources/0 = SubResource("TileSetAtlasSource_p7wxo")
+sources/1 = SubResource("TileSetAtlasSource_6stdn")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7yod"]
+size = Vector2(175, 31)
 
 [node name="Main" type="Node2D"]
 
@@ -265,3 +270,13 @@ format = 2
 layer_0/tile_data = PackedInt32Array(3276844, 0, 0, 3276841, 131072, 4, 3342374, 0, 6, 3407910, 0, 7, 3473446, 0, 8, 3342375, 65536, 6, 3407911, 65536, 7, 3473447, 65536, 8, 3276840, 131072, 5, 3342376, 131072, 6, 3407912, 131072, 7, 3473448, 131072, 8, 655348, 131072, 2, 720884, 131072, 3, 786420, 131072, 3)
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(655356, 1, 4, 720892, 1, 5, 786428, 1, 6, 655357, 65537, 4, 720893, 65537, 5, 786429, 65537, 6, 458752, 1, 4, 458753, 65537, 4, 524288, 1, 5, 524289, 65537, 5, 589824, 1, 5, 589825, 65537, 5, 655360, 1, 5, 655361, 65537, 5, 720896, 1, 6, 720897, 65537, 6, 720900, 1, 6, 720901, 65537, 6, 655364, 1, 5, 655365, 65537, 5, 524292, 1, 5, 524293, 65537, 5, 589828, 1, 5, 589829, 65537, 5, 458756, 1, 5, 458757, 65537, 5, 393220, 1, 5, 393221, 65537, 5, 327684, 1, 5, 327685, 65537, 5, 262148, 1, 4, 262149, 65537, 4, 262153, 327681, 8, 327689, 1, 2, 393225, 1, 3, 458761, 1, 3, 524297, 1, 2, 589833, 1, 3, 655369, 1, 2, 720905, 1, 3, 262154, 327681, 7, 327690, 65537, 2, 393226, 65537, 3, 458762, 65537, 3, 524298, 65537, 2, 589834, 65537, 3, 655370, 65537, 2, 720906, 65537, 3, 262155, 327681, 8, 327691, 1, 2, 393227, 1, 3, 458763, 1, 2, 524299, 1, 3, 589835, 1, 2, 655371, 1, 2, 720907, 1, 3, 262156, 327681, 8, 327692, 65537, 2, 393228, 65537, 3, 458764, 65537, 2, 524300, 65537, 3, 589836, 65537, 2, 655372, 65537, 2, 720908, 65537, 3, 262157, 262145, 7, 327693, 1, 2, 393229, 1, 3, 458765, 1, 3, 524301, 1, 2, 589837, 1, 3, 655373, 1, 2, 720909, 1, 3, 262158, 327681, 7, 327694, 65537, 2, 393230, 65537, 3, 458766, 65537, 3, 524302, 65537, 2, 589838, 65537, 3, 655374, 65537, 2, 720910, 65537, 3, 262159, 262145, 8, 327695, 1, 2, 393231, 1, 3, 458767, 1, 2, 524303, 1, 3, 589839, 1, 2, 655375, 1, 2, 720911, 1, 3, 262160, 327681, 7, 327696, 65537, 2, 393232, 65537, 3, 458768, 65537, 2, 524304, 65537, 3, 589840, 65537, 2, 655376, 65537, 2, 720912, 65537, 3, 262161, 327681, 7, 327697, 1, 2, 393233, 1, 3, 458769, 1, 3, 524305, 1, 2, 589841, 1, 3, 655377, 1, 2, 720913, 1, 3, 262162, 327681, 8, 327698, 65537, 2, 393234, 65537, 3, 458770, 65537, 3, 524306, 65537, 2, 589842, 65537, 3, 655378, 65537, 2, 720914, 65537, 3)
+
+[node name="Final" parent="." instance=ExtResource("9_p7wxo")]
+position = Vector2(798, 381)
+
+[node name="Killzone" parent="." instance=ExtResource("10_6stdn")]
+position = Vector2(551, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(17.5, 2.5)
+shape = SubResource("RectangleShape2D_p7yod")
