@@ -1,34 +1,36 @@
-[gd_scene load_steps=16 format=4 uid="uid://b6s74cml3v37t"]
+[gd_scene load_steps=14 format=4 uid="uid://b6s74cml3v37t"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_bpmuv"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_v6l7g"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_1dlab"]
 [ext_resource type="TileSet" uid="uid://37ayrr1p0mfy" path="res://Buildings.tres" id="4_b2h86"]
 [ext_resource type="TileSet" uid="uid://u2x6pgcq4i22" path="res://Props.tres" id="5_5c8cy"]
-[ext_resource type="Shader" uid="uid://qw2w71lv56hc" path="res://translucid.gdshader" id="5_bpmuv"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="6_2xtfh"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_4n4lh"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="8_ummiy"]
 [ext_resource type="Texture2D" uid="uid://xou868q6uebq" path="res://Sprites/Luz/Overlay/2.png" id="9_2tpt6"]
+[ext_resource type="PackedScene" uid="uid://qk6qqmqpubhv" path="res://death_border.tscn" id="11_bpmuv"]
 [ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="11_xaxtn"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
-distance = 1.0
+[sub_resource type="Shader" id="Shader_mh33d"]
+code = "shader_type canvas_item;
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpmuv"]
-shader = ExtResource("5_bpmuv")
-shader_parameter/holeCenter = Vector2(0, 0)
-shader_parameter/holeRadius = 160.0
-shader_parameter/penumbra = 20.0
+uniform vec2 holeCenter;
+uniform float holeRadius = 160;
+uniform float penumbra = 20.0;
+
+varying vec2 p;
+
+void vertex(){
+	p = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0) ).xy;
+}
+
+void fragment(){
+	COLOR.a = smoothstep(holeRadius - penumbra/2.0, holeRadius + penumbra/2.0, length(p - holeCenter));
+}"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v6l7g"]
-shader = ExtResource("5_bpmuv")
-shader_parameter/holeCenter = Vector2(0, 0)
-shader_parameter/holeRadius = 160.0
-shader_parameter/penumbra = 20.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dlab"]
-shader = ExtResource("5_bpmuv")
+shader = SubResource("Shader_mh33d")
 shader_parameter/holeCenter = Vector2(0, 0)
 shader_parameter/holeRadius = 160.0
 shader_parameter/penumbra = 20.0
@@ -42,15 +44,11 @@ position = Vector2(226, 490)
 position = Vector2(0, -43)
 offset = Vector2(48, 0)
 zoom = Vector2(4, 4)
+limit_left = 0
+limit_bottom = 544
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("2_v6l7g")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(516, 513)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_4vx3i")
 
 [node name="BackGround" parent="." instance=ExtResource("3_1dlab")]
 position = Vector2(414, 337)
@@ -82,8 +80,8 @@ tile_map_data = PackedByteArray("AAAKAB4AAAADAAAAAAAKAB8AAAADAAEAAAALAB4AAAAEAAA
 tile_set = ExtResource("5_5c8cy")
 
 [node name="Front_P" type="TileMapLayer" parent="Props"]
+modulate = Color(1, 1, 1, 0.823529)
 z_index = 2
-material = SubResource("ShaderMaterial_bpmuv")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAQAB4AAAADAAAAAAAQAB8AAAADAAEAAAARAB4AAAAEAAAAAAARAB8AAAAEAAEAAAAMAB4AAAADAAAAAAAMAB8AAAADAAEAAAANAB4AAAACAAYAABANAB8AAAAEAAEAAAAdAB4AAAAFAAsAAAAdAB8AAAAFAAwAAAAeAB4AAAAGAAsAAAAeAB8AAAAGAAwAAAAfAB4AAAAHAAsAAAAfAB8AAAAHAAwAAAAPAB8AAAACAAQAAAAJAB8AAAACAAQAAAALAB8AAAACAAQAAAANAB0AAAACAAUAABAOAB4AAAABAAYAABA=")
 tile_set = ExtResource("5_5c8cy")
@@ -95,7 +93,9 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAANAB4AAAAEAAAAAAA=")
 tile_set = ExtResource("5_5c8cy")
 
-[node name="Luz1" type="Sprite2D" parent="."]
+[node name="VFX" type="Node2D" parent="."]
+
+[node name="Luz1" type="Sprite2D" parent="VFX"]
 modulate = Color(0.0196078, 0.929412, 0, 0.392157)
 z_index = 2
 position = Vector2(471.533, 509.039)
@@ -103,13 +103,13 @@ rotation = -3.1391
 scale = Vector2(2.94169, 1)
 texture = ExtResource("6_2xtfh")
 
-[node name="Holofote1" type="Sprite2D" parent="."]
+[node name="Holofote1" type="Sprite2D" parent="VFX"]
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 2
 position = Vector2(584, 440)
 texture = ExtResource("6_2xtfh")
 
-[node name="Holofote2" type="Sprite2D" parent="."]
+[node name="Holofote2" type="Sprite2D" parent="VFX"]
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 2
 position = Vector2(712, 440)
@@ -118,40 +118,31 @@ texture = ExtResource("6_2xtfh")
 [node name="Fumo" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
 z_index = 10
-offset_left = 513.0
-offset_top = 335.0
-offset_right = 2313.0
-offset_bottom = 1539.0
-scale = Vector2(-0.284923, 0.18698)
+offset_left = 512.861
+offset_top = -143.0
+offset_right = 2312.86
+offset_bottom = 1061.0
+scale = Vector2(-0.284923, 0.70698)
 texture = ExtResource("7_4n4lh")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_1dlab")
-offset_left = 40.0
-offset_top = 305.0
-offset_right = 80.0
-offset_bottom = 345.0
-scale = Vector2(10.8882, 7.37096)
-color = Color(0, 0, 0, 1)
 
 [node name="Esgoto" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
 z_index = 10
-offset_left = 513.0
-offset_top = 335.0
-offset_right = 2313.0
-offset_bottom = 1540.0
-scale = Vector2(0.355363, 0.186016)
+offset_left = 512.861
+offset_top = -143.0
+offset_right = 2312.86
+offset_bottom = 1062.0
+scale = Vector2(0.355363, 0.703335)
 texture = ExtResource("8_ummiy")
 
 [node name="Sombras" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
 z_index = 10
-offset_left = 1665.0
-offset_top = 335.0
-offset_right = 3465.0
-offset_bottom = 1539.0
-scale = Vector2(-0.284923, 0.18698)
+offset_left = 1664.86
+offset_top = -143.0
+offset_right = 3464.86
+offset_bottom = 1061.0
+scale = Vector2(-0.284923, 0.70698)
 texture = ExtResource("9_2tpt6")
 
 [node name="Pistão" parent="." instance=ExtResource("11_xaxtn")]
@@ -165,3 +156,6 @@ metadata/delay = 0.5
 [node name="Pistão3" parent="." instance=ExtResource("11_xaxtn")]
 position = Vector2(1371, 480)
 metadata/delay = 1.0
+
+[node name="Death_Border" parent="." instance=ExtResource("11_bpmuv")]
+position = Vector2(370, 573)

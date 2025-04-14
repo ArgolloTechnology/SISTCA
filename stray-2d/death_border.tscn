@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://qk6qqmqpubhv"]
+
+[ext_resource type="Script" uid="uid://cygx1jyy7vptu" path="res://scripts/JC/death_border.gd" id="1_fer2w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_par8t"]
+
+[node name="Death_Border" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_fer2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_par8t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
