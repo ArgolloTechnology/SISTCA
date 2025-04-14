@@ -719,7 +719,7 @@ color_ramp = SubResource("GradientTexture1D_sweqy")
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_gq8d0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -728,33 +728,20 @@ rotation = 1.57079
 shape = SubResource("CircleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 1
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
 animation = &"stand"
 autoplay = "idle"
 
-[node name="sitTimer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
+[node name="VFX" type="Node2D" parent="."]
 
-[node name="runTimer" type="Timer" parent="."]
-wait_time = 2.5
-one_shot = true
-
-[node name="restTime" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
+[node name="walk" type="GPUParticles2D" parent="VFX"]
 z_index = 2
 texture = SubResource("GradientTexture1D_i3pqv")
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 
-[node name="jump" type="GPUParticles2D" parent="."]
-visible = false
+[node name="jump" type="GPUParticles2D" parent="VFX"]
 z_index = 2
 emitting = false
 amount = 16
@@ -764,8 +751,7 @@ one_shot = true
 explosiveness = 0.75
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 
-[node name="scratch" type="GPUParticles2D" parent="."]
-visible = false
+[node name="scratch" type="GPUParticles2D" parent="VFX"]
 position = Vector2(7, -7)
 rotation = 0.261799
 emitting = false
@@ -773,7 +759,21 @@ amount = 4
 lifetime = 1.5
 process_material = ExtResource("3_i3pqv")
 
+[node name="TIMERS" type="Node2D" parent="."]
+
+[node name="sitTimer" type="Timer" parent="TIMERS"]
+wait_time = 5.0
+one_shot = true
+
+[node name="runTimer" type="Timer" parent="TIMERS"]
+wait_time = 2.5
+one_shot = true
+
+[node name="restTime" type="Timer" parent="TIMERS"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="sitTimer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="runTimer" to="." method="_on_run_timer_timeout"]
-[connection signal="timeout" from="restTime" to="." method="_on_rest_time_timeout"]
+[connection signal="timeout" from="TIMERS/sitTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TIMERS/runTimer" to="." method="_on_run_timer_timeout"]
+[connection signal="timeout" from="TIMERS/restTime" to="." method="_on_rest_time_timeout"]
