@@ -1,15 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5ugwvq6xur7y"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ugwvq6xur7y"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_ypd5n"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_31qqw"]
+[ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/industrial/2 Background/Background.png" id="3_b1tnb"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_b2amt"]
 [ext_resource type="PackedScene" uid="uid://cwgkp6rdhdeg3" path="res://scenes/JC/death_border.tscn" id="5_k8slf"]
 [ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://scenes/JC/inimigo.tscn" id="6_b1tnb"]
-[ext_resource type="Texture2D" uid="uid://bfix2bie046a1" path="res://Sprites/industrial/2 Background/1.png" id="6_qkni7"]
-[ext_resource type="Texture2D" uid="uid://fy03relcp102" path="res://Sprites/industrial/2 Background/2.png" id="7_t7j0p"]
-[ext_resource type="Texture2D" uid="uid://urokqt3jp0fs" path="res://Sprites/industrial/2 Background/3.png" id="8_lomi1"]
-[ext_resource type="Texture2D" uid="uid://dw4o687ubp0uf" path="res://Sprites/industrial/2 Background/4.png" id="9_dfqao"]
-[ext_resource type="Texture2D" uid="uid://dg5jb5uil12de" path="res://Sprites/industrial/2 Background/5.png" id="10_hynir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8slf"]
 texture = ExtResource("4_b2amt")
@@ -380,43 +376,10 @@ zoom = Vector2(4, 4)
 limit_bottom = 20
 script = ExtResource("2_31qqw")
 
-[node name="paralax" type="ParallaxBackground" parent="."]
-offset = Vector2(100, -160)
-transform = Transform2D(1, 0, 0, 1, 100, -160)
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="paralax"]
-z_index = -6
-
-[node name="Sprite2D" type="Sprite2D" parent="paralax/ParallaxLayer"]
-texture = ExtResource("6_qkni7")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="paralax"]
-z_index = -4
-motion_scale = Vector2(0.9, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="paralax/ParallaxLayer2"]
-texture = ExtResource("7_t7j0p")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="paralax"]
-z_index = -3
-motion_scale = Vector2(0.8, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="paralax/ParallaxLayer3"]
-texture = ExtResource("8_lomi1")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="paralax"]
-z_index = -2
-motion_scale = Vector2(0.7, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="paralax/ParallaxLayer4"]
-texture = ExtResource("9_dfqao")
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="paralax"]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-motion_scale = Vector2(0.6, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="paralax/ParallaxLayer5"]
-texture = ExtResource("10_hynir")
+position = Vector2(76, -161)
+texture = ExtResource("3_b1tnb")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_b1tnb")
