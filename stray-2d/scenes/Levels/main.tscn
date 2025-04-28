@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://dvk7fne1bul2v"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_tokei"]
+[ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="1_tokei"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_tl6rw"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_vun5y"]
-[ext_resource type="TileSet" uid="uid://37ayrr1p0mfy" path="res://Buildings.tres" id="4_j5bw4"]
-[ext_resource type="TileSet" uid="uid://u2x6pgcq4i22" path="res://Props.tres" id="5_8x6bw"]
+[ext_resource type="TileSet" uid="uid://c6kwav4kvu5ay" path="res://Buildings.tres" id="4_j5bw4"]
+[ext_resource type="TileSet" uid="uid://dpdsb00yfs12d" path="res://Props.tres" id="5_8x6bw"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="6_ion71"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_ohdmr"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="8_yn0sp"]

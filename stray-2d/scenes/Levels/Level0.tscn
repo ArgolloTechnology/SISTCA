@@ -1,16 +1,16 @@
 [gd_scene load_steps=14 format=4 uid="uid://b6s74cml3v37t"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_bpmuv"]
-[ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_v6l7g"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="1_bpmuv"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="2_v6l7g"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_1dlab"]
-[ext_resource type="TileSet" uid="uid://37ayrr1p0mfy" path="res://Buildings.tres" id="4_b2h86"]
-[ext_resource type="TileSet" uid="uid://u2x6pgcq4i22" path="res://Props.tres" id="5_5c8cy"]
+[ext_resource type="TileSet" uid="uid://c6kwav4kvu5ay" path="res://Buildings.tres" id="4_b2h86"]
+[ext_resource type="TileSet" uid="uid://dpdsb00yfs12d" path="res://Props.tres" id="5_5c8cy"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="6_2xtfh"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_4n4lh"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="8_ummiy"]
 [ext_resource type="Texture2D" uid="uid://xou868q6uebq" path="res://Sprites/Luz/Overlay/2.png" id="9_2tpt6"]
-[ext_resource type="PackedScene" uid="uid://qk6qqmqpubhv" path="res://death_border.tscn" id="11_bpmuv"]
-[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="11_xaxtn"]
+[ext_resource type="PackedScene" path="res://death_border.tscn" id="11_bpmuv"]
+[ext_resource type="PackedScene" path="res://scenes/pistão.tscn" id="11_xaxtn"]
 
 [sub_resource type="Shader" id="Shader_mh33d"]
 code = "shader_type canvas_item;

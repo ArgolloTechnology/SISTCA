@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://ci2078p8jaqol"]
+[gd_scene load_steps=99 format=3 uid="uid://dyfc6tvelyxii"]
 
 [ext_resource type="Script" uid="uid://ddbk2hyukc4a5" path="res://scripts/player.gd" id="1_gq8d0"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="1_sdm0f"]
