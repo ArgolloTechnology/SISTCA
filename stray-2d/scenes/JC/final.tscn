@@ -1,19 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://duk4h8n6p4j2b"]
+[gd_scene load_steps=5 format=3 uid="uid://duk4h8n6p4j2b"]
 
 [ext_resource type="Script" uid="uid://doi1dlwef8yfo" path="res://scripts/JC/final.gd" id="1_cqmwm"]
 [ext_resource type="Texture2D" uid="uid://blsvyccpvut84" path="res://Sprites/industrial/3 Objects/Bench.png" id="2_cqmwm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqmwm"]
+radius = 8.06226
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqmwm"]
+size = Vector2(31, 11)
 
 [node name="Final" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_cqmwm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_cqmwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_cqmwm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_cqmwm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
