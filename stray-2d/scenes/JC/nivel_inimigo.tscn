@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b5ugwvq6xur7y"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_ypd5n"]
-[ext_resource type="Script" uid="uid://3co6rjn8gg4" path="res://scenes/JC/camera_2d.gd" id="2_b1tnb"]
+[ext_resource type="Script" uid="uid://3co6rjn8gg4" path="res://scripts/JC/camera_2d.gd" id="2_b1tnb"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_b2amt"]
 [ext_resource type="PackedScene" uid="uid://cwgkp6rdhdeg3" path="res://scenes/JC/death_border.tscn" id="5_k8slf"]
 [ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://scenes/JC/inimigo.tscn" id="6_b1tnb"]
@@ -377,7 +377,7 @@ sources/0 = SubResource("TileSetAtlasSource_k8slf")
 [node name="Nivel" type="Node2D"]
 
 [node name="BackGround" parent="." instance=ExtResource("6_l2p6b")]
-position = Vector2(536, -14)
+position = Vector2(433, -74)
 
 [node name="Player" parent="." instance=ExtResource("1_ypd5n")]
 
