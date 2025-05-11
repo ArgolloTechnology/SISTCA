@@ -20,6 +20,7 @@ func testEsc():
 
 func _on_resume_pressed():
 	resume()
+	$AnimationPlayer.play("RESET")
 
 func _on_restart_pressed():
 	resume()
