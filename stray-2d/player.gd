@@ -12,6 +12,11 @@ const SPEED = 50
 const JUMP_VELOCITY = -300.0
 const RUN_MULTIPLIER = 2
 
+# DASH
+const DASH_SPEED = 300.0
+const DASH_DURATION = 0.2
+const DASH_COOLDOWN = 0.5
+
 var can_walk = false
 var running = false
 var jumping = false
@@ -19,14 +24,24 @@ var movement = "walk"
 var idle = "idle"
 var scratching = false
 
+# DASH
+var dashing = false
+var dash_timer = 0.0
+var dash_cooldown_timer = 0.0
+var dash_direction = 0
+
 func _process(_delta: float) -> void:
 	if velocity.y > 0 and anim.animation != "falling":
 		anim.play("falling")
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-	handle_jump()
-	handle_movement()
+	handle_dash(delta)  # DASH
+
+	if not dashing:  # DASH
+		handle_jump()
+		handle_movement()
+
 	move_and_slide()
 
 func apply_gravity(delta: float) -> void:
@@ -35,7 +50,7 @@ func apply_gravity(delta: float) -> void:
 		moveParticle.emitting = false
 
 func handle_jump() -> void:
-	if Input.is_action_just_pressed("ui_up") and is_on_floor() and not jumping:
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
 		anim.play("jump")
 		jumping = true
 		jump.restart()
@@ -59,7 +74,6 @@ func handle_movement() -> void:
 				movement = "wall sup"
 				scratching = true
 				moveParticle.emitting = false
-				#mudar posição de scratch dependendo da direção
 				scratch.position.x = abs(scratch.position.x) * direction
 				scratch.rotation_degrees = 15 if direction > 0 else -15
 		else:
@@ -82,13 +96,11 @@ func handle_movement() -> void:
 		else: 
 			idle = "idle stand run"
 		velocity.x = direction * SPEED * (RUN_MULTIPLIER if running else 1)
-		#if is_on_floor():
 	else:
 		if movement == "wall scratch":
 			movement = "wall out"
 			can_walk = false
 			anim.play(movement)
-		#scratching = false
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if not running:
 			run_timer.start()
@@ -131,9 +143,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			scratch.emitting = false
 			scratching = false
 			can_walk = true
-	#if anim.animation == "falling":
-	#	jumping = false
-		#anim.set_frame_and_progress(4,0)
 
 func _on_run_timer_timeout() -> void:
 	running = true
@@ -141,6 +150,28 @@ func _on_run_timer_timeout() -> void:
 func _on_rest_time_timeout() -> void:
 	running = false
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("die")
+
+# DASH
+func handle_dash(delta: float) -> void:
+	if dash_cooldown_timer > 0.0:
+		dash_cooldown_timer -= delta
+
+	if dashing:
+		dash_timer -= delta
+		if dash_timer <= 0.0:
+			dashing = false
+	else:
+		# DASH: Verifica se Shift ou Espaço foi pressionado
+		if (Input.is_key_pressed(KEY_SHIFT)) and dash_cooldown_timer <= 0.0 and can_walk:
+			dashing = true
+			dash_timer = DASH_DURATION
+			dash_cooldown_timer = DASH_COOLDOWN
+			dash_direction = sign(velocity.x)
+			if dash_direction == 0:
+				dash_direction = -1 if anim.flip_h else 1
+			anim.play("dashing")  # Ou "dash" se tiveres uma animação específica
+
+	if dashing:
+		velocity.x = dash_direction * DASH_SPEED
