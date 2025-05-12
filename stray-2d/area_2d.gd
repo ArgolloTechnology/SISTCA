@@ -6,10 +6,12 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		$TileMap.visible = false
+		$Low.visible = false
+		$High.visible = false
 		print("Player entrou no item!")
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		$TileMap.visible = true
+		$Low.visible = true
+		$High.visible = true
 		print("Player saiu do item!")
