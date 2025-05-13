@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bvwd163y18q06"]
+[gd_scene load_steps=20 format=3 uid="uid://bvwd163y18q06"]
 
-[ext_resource type="Script" uid="uid://cqt5n65ij2ijg" path="res://scripts/JC/Enemy.gd" id="1_ymd2q"]
+[ext_resource type="Script" uid="uid://cqt5n65ij2ijg" path="res://boss.gd" id="1_ymd2q"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="2_cf251"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aspn"]
-size = Vector2(20, 12)
+size = Vector2(32, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cf251"]
 atlas = ExtResource("2_cf251")
@@ -38,37 +38,29 @@ region = Rect2(32, 1184, 32, 32)
 atlas = ExtResource("2_cf251")
 region = Rect2(64, 1184, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymd2q"]
+atlas = ExtResource("2_cf251")
+region = Rect2(192, 320, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2w4t"]
 atlas = ExtResource("2_cf251")
-region = Rect2(0, 160, 32, 32)
+region = Rect2(224, 320, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfyxt"]
 atlas = ExtResource("2_cf251")
-region = Rect2(32, 160, 32, 32)
+region = Rect2(160, 320, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yl46a"]
 atlas = ExtResource("2_cf251")
-region = Rect2(64, 160, 32, 32)
+region = Rect2(128, 320, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1q1cu"]
 atlas = ExtResource("2_cf251")
-region = Rect2(96, 160, 32, 32)
+region = Rect2(96, 320, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nban"]
 atlas = ExtResource("2_cf251")
-region = Rect2(128, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1n6i"]
-atlas = ExtResource("2_cf251")
-region = Rect2(160, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewmvy"]
-atlas = ExtResource("2_cf251")
-region = Rect2(192, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_odduh"]
-atlas = ExtResource("2_cf251")
-region = Rect2(224, 160, 32, 32)
+region = Rect2(96, 288, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_se7i0"]
 animations = [{
@@ -99,9 +91,12 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 6.0
+"speed": 2.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymd2q")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2w4t")
 }, {
@@ -116,41 +111,32 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1nban")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1n6i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ewmvy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_odduh")
 }],
-"loop": true,
-"name": &"walking",
-"speed": 7.0
+"loop": false,
+"name": &"idle",
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8lr2"]
-size = Vector2(16.5, 5)
+size = Vector2(31, 6.5)
 
-[node name="Inimigo" type="Node2D"]
+[node name="Boss" type="Node2D"]
 script = ExtResource("1_ymd2q")
 
 [node name="Damage_hitbox" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_hitbox"]
-position = Vector2(-1, -3)
+position = Vector2(-3, -6)
 shape = SubResource("RectangleShape2D_0aspn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
-scale = Vector2(1, 0.9375)
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-1, -24)
+scale = Vector2(1.5625, 1.51563)
 sprite_frames = SubResource("SpriteFrames_se7i0")
-animation = &"death"
-frame = 7
-frame_progress = 1.0
+animation = &"idle"
+flip_h = true
 
 [node name="Detect_left" type="RayCast2D" parent="."]
 position = Vector2(-1, -3)
@@ -160,20 +146,12 @@ target_position = Vector2(-13, 0)
 position = Vector2(-1, -3)
 target_position = Vector2(13, 0)
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-11, 0)
-target_position = Vector2(0, 13)
-
-[node name="RayCast2D2" type="RayCast2D" parent="."]
-position = Vector2(9, 0)
-target_position = Vector2(0, 13)
-
 [node name="Kill_hitbox" type="Area2D" parent="."]
 position = Vector2(10, -13)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill_hitbox"]
-position = Vector2(-10.75, 1)
+position = Vector2(-13.5, -1.75)
 shape = SubResource("RectangleShape2D_s8lr2")
 
 [connection signal="body_entered" from="Damage_hitbox" to="." method="_on_damage_hitbox_body_entered"]

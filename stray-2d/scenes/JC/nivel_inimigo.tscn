@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://b5ugwvq6xur7y"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_ypd5n"]
+[ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="1_ypd5n"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_31qqw"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_b2amt"]
 [ext_resource type="PackedScene" uid="uid://cwgkp6rdhdeg3" path="res://scenes/JC/death_border.tscn" id="5_k8slf"]
-[ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://scenes/JC/inimigo.tscn" id="6_b1tnb"]
+[ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://boss.tscn" id="6_b1tnb"]
 [ext_resource type="Texture2D" uid="uid://bfix2bie046a1" path="res://Sprites/industrial/2 Background/1.png" id="6_qkni7"]
 [ext_resource type="Texture2D" uid="uid://fy03relcp102" path="res://Sprites/industrial/2 Background/2.png" id="7_t7j0p"]
 [ext_resource type="Texture2D" uid="uid://urokqt3jp0fs" path="res://Sprites/industrial/2 Background/3.png" id="8_lomi1"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="8_aq45b"]
 [ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_ft807"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="9_ana2u"]
-[ext_resource type="PackedScene" uid="uid://djjuks38n4pvb" path="res://enemy_comp.tscn" id="9_jukch"]
+[ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://boss.tscn" id="9_jukch"]
 [ext_resource type="Texture2D" uid="uid://dkfm3vjtohl2d" path="res://Sprites/industrial/3 Objects/Ladder1.png" id="10_wm374"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="11_l2423"]
 
@@ -571,5 +571,5 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 
-[node name="Node2D" parent="." instance=ExtResource("9_jukch")]
-position = Vector2(238, 491)
+[node name="Boss" parent="." instance=ExtResource("9_jukch")]
+position = Vector2(240, 496)
