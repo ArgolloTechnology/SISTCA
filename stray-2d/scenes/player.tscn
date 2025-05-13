@@ -1,6 +1,6 @@
-[gd_scene load_steps=99 format=3 uid="uid://dyfc6tvelyxii"]
+[gd_scene load_steps=100 format=3 uid="uid://ci2078p8jaqol"]
 
-[ext_resource type="Script" uid="uid://ddbk2hyukc4a5" path="res://scripts/player.gd" id="1_gq8d0"]
+[ext_resource type="Script" uid="uid://otxe60os112b" path="res://player.gd" id="1_gq8d0"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="1_sdm0f"]
 [ext_resource type="Material" uid="uid://d071mx0l1ribo" path="res://scratch.tres" id="3_i3pqv"]
 
@@ -150,6 +150,10 @@ region = Rect2(192, 96, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny14h"]
 atlas = ExtResource("1_sdm0f")
 region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgx3h"]
+atlas = ExtResource("1_sdm0f")
+region = Rect2(0, 608, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nvsb"]
 atlas = ExtResource("1_sdm0f")
@@ -480,6 +484,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kgx3h")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6nvsb")
 }, {
 "duration": 1.0,
@@ -724,7 +731,7 @@ shape = SubResource("CircleShape2D_onrkg")
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
-animation = &"jump"
+animation = &"stand"
 autoplay = "idle"
 
 [node name="VFX" type="Node2D" parent="."]

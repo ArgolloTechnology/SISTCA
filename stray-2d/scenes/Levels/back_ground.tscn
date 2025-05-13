@@ -48,6 +48,7 @@ texture = ExtResource("4_c8n83")
 z_index = -5
 repeat_size = Vector2(576, 324)
 repeat_times = 2
+follow_viewport = false
 
 [node name="Sprite" type="Sprite2D" parent="L1"]
 texture = ExtResource("5_osk5j")
