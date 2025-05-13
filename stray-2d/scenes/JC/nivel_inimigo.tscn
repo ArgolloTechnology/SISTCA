@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5ugwvq6xur7y"]
+[gd_scene load_steps=14 format=3 uid="uid://b5ugwvq6xur7y"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_ypd5n"]
+[ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="1_ypd5n"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_31qqw"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_b2amt"]
 [ext_resource type="PackedScene" uid="uid://cwgkp6rdhdeg3" path="res://scenes/JC/death_border.tscn" id="5_k8slf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://urokqt3jp0fs" path="res://Sprites/industrial/2 Background/3.png" id="8_lomi1"]
 [ext_resource type="Texture2D" uid="uid://dw4o687ubp0uf" path="res://Sprites/industrial/2 Background/4.png" id="9_dfqao"]
 [ext_resource type="Texture2D" uid="uid://dg5jb5uil12de" path="res://Sprites/industrial/2 Background/5.png" id="10_hynir"]
+[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="11_t7j0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8slf"]
 texture = ExtResource("4_b2amt")
@@ -428,3 +429,7 @@ position = Vector2(147, 65)
 
 [node name="Inimigo" parent="." instance=ExtResource("6_b1tnb")]
 position = Vector2(207, -4)
+
+[node name="Pistão" parent="." instance=ExtResource("11_t7j0p")]
+position = Vector2(4, -30)
+metadata/enemy = NodePath("../Inimigo")
