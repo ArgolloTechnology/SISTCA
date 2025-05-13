@@ -43,28 +43,30 @@ func _on_damage_hitbox_body_entered(body: Node2D) -> void:
 	if is_dead:
 		return
 
-	# Garante que não foi o salto que causou esta colisão
-	if not kill_hitbox.get_overlapping_bodies().has(body):
-		print("Skill issue (morreu por contacto lateral)")
+	if kill_hitbox.get_overlapping_bodies().has(body):
+		# Jogador saltou em cima do boss
+		lives -= 1
+		print("Boss atingido! Vidas restantes: ", lives)
+
+	if "velocity" in body:
+		body.velocity.y = -200
+		body.velocity.x = -1000
+
+		if lives <= 0:
+			is_dead = true
+			animation.play("death")
+			damage_hitbox.set_deferred("monitoring", false)
+			$Damage_hitbox/CollisionShape2D.set_deferred("disabled", true)
+			$Kill_hitbox/CollisionShape2D.set_deferred("disabled", true)
+	else:
+		# Se o jogador colidir de lado ou por baixo, perde
+		print("Skill issue")
 		call_deferred("restartlevel")
 
 func _on_kill_hitbox_body_entered(body: Node2D) -> void:
-	if is_dead:
-		return
-
-	lives -= 1
-	print("Boss atingido! Vidas restantes: ", lives)
-
-	if lives <= 0:
-		is_dead = true
-		animation.play("death")
-
-		# Desativa o hitbox de dano para evitar que o jogador morra
-		damage_hitbox.set_deferred("monitoring", false)
-
-		# Remove o colisor da parte de cima
-		$Damage_hitbox/CollisionShape2D.set_deferred("disabled", true)
-		$Kill_hitbox/CollisionShape2D.set_deferred("disabled", true)
+	# Esta função é mantida para compatibilidade,
+	# mas o tratamento principal está na função acima
+	pass
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animation.animation == "death":
