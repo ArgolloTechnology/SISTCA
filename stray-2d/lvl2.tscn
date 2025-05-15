@@ -528,7 +528,7 @@ sources/2 = SubResource("TileSetAtlasSource_6ivlg")
 sources/3 = SubResource("TileSetAtlasSource_awrrf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nujma"]
-size = Vector2(42.25, 79)
+size = Vector2(255.25, 79)
 
 [node name="Node2D" type="Node2D"]
 
@@ -562,7 +562,7 @@ tile_set = SubResource("TileSet_c7ys4")
 position = Vector2(542, 85)
 
 [node name="Player" parent="." instance=ExtResource("8_aq45b")]
-position = Vector2(163, 476)
+position = Vector2(817, 183)
 script = ExtResource("9_vcnes")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -575,18 +575,24 @@ drag_vertical_enabled = true
 [node name="Boss" parent="." instance=ExtResource("9_jukch")]
 position = Vector2(1051, 191)
 
-[node name="Pistão" parent="." instance=ExtResource("11_3pm5q")]
+[node name="piston_left" parent="." instance=ExtResource("11_3pm5q")]
 position = Vector2(790, 159)
+piston_left_path = NodePath(".")
+piston_right_path = NodePath("../piston_right")
+trigger_area_path = NodePath("../Area2D")
 
-[node name="Pistão2" parent="." instance=ExtResource("11_3pm5q")]
+[node name="piston_right" parent="." instance=ExtResource("11_3pm5q")]
 position = Vector2(1125, 160)
+piston_left_path = null
+piston_right_path = null
+trigger_area_path = null
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1125, 158)
 script = ExtResource("11_uj1pa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-274.125, -7.5)
+position = Vector2(-167.625, -7.5)
 shape = SubResource("RectangleShape2D_nujma")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]

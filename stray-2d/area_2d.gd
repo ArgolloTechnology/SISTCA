@@ -10,3 +10,7 @@ func _on_area_2d_body_entered(body: Node) -> void:
 		# Animação de zoom usando Tween (opcional, visualmente mais suave)
 		var tween := create_tween()
 		tween.tween_property(camera, "zoom", zoom_out, zoom_time)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

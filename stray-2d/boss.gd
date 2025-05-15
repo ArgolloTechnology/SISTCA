@@ -78,3 +78,4 @@ func activate_enemy():
 		speed = 0
 		animation.play("walking")
 		print("Boss ativado!")
+		
