@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c4hy6cbex15lx"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_yshs8"]
+[ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="1_yshs8"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_kq37c"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_45l7v"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_41dvb"]

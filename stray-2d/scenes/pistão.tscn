@@ -112,6 +112,47 @@ tracks/2/keys = {
 "values": [PackedVector2Array(-16, -22, -9, -22, -9, -32, 9, -32, 9, -22, 16, -22, 16, 0, -16, 0), PackedVector2Array(-16, -5, -9, -22, -9, -32, 9, -32, 9, -22, 16, -5, 16, 22, -16, 22), PackedVector2Array(-16, 13, -9, 8, -9, -32, 9, -32, 9, 8, 16, 13, 16, 31, -16, 31), PackedVector2Array(-16, 10, -9, 10, -9, -32, 9, -32, 9, 10, 16, 10, 16, 31, -16, 31), PackedVector2Array(-16, 11, -9, 0, -9, -32, 9, -32, 9, 0, 16, 11, 16, 32, -16, 32), PackedVector2Array(-16, 0, -9, 0, -9, -32, 9, -32, 9, 0, 16, 0, 16, 22, -16, 22), PackedVector2Array(-16, -10, -9, -10, -9, -32, 9, -32, 9, -10, 16, -10, 16, 12, -16, 12), PackedVector2Array(-16, -20, -9, -20, -9, -32, 9, -32, 9, -20, 16, -20, 16, 2, -16, 2)]
 }
 
+[sub_resource type="Animation" id="Animation_dm8mp"]
+resource_name = "close"
+length = 0.6
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Killzone:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 22), Vector2(0, 32), Vector2(0, 31), Vector2(0, 32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody2D/CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-16, -22, -5, -22, -5, -32, 5, -32, 5, -22, 16, -22, 16, 0, -16, 0), PackedVector2Array(-16, -5, -5, -5, -5, -32, 5, -32, 5, -5, 16, -5, 16, 22, -16, 22), PackedVector2Array(-16, 12, -5, 12, -5, -32, 5, -32, 5, 12, 16, 12, 16, 31, -16, 31), PackedVector2Array(-16, 8, -5, 8, -5, -32, 5, -32, 5, 8, 16, 8, 16, 31, -16, 31), PackedVector2Array(-16, 10, -5, 10, -5, -32, 5, -32, 5, 10, 16, 10, 16, 32, -16, 32)]
+}
+
 [sub_resource type="Animation" id="Animation_r5w03"]
 resource_name = "idle"
 length = 1.00001
@@ -180,47 +221,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(-107, -83), Vector2(-106, -61), Vector2(-108, -51), Vector2(-107, -61), Vector2(-107, -71), Vector2(-107, -81)]
-}
-
-[sub_resource type="Animation" id="Animation_dm8mp"]
-resource_name = "close"
-length = 0.6
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Killzone:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(0, 0), Vector2(0, 22), Vector2(0, 32), Vector2(0, 31), Vector2(0, 32)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("StaticBody2D/CollisionPolygon2D:polygon")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [PackedVector2Array(-16, -22, -5, -22, -5, -32, 5, -32, 5, -22, 16, -22, 16, 0, -16, 0), PackedVector2Array(-16, -5, -5, -5, -5, -32, 5, -32, 5, -5, 16, -5, 16, 22, -16, 22), PackedVector2Array(-16, 12, -5, 12, -5, -32, 5, -32, 5, 12, 16, 12, 16, 31, -16, 31), PackedVector2Array(-16, 8, -5, 8, -5, -32, 5, -32, 5, 8, 16, 8, 16, 31, -16, 31), PackedVector2Array(-16, 10, -5, 10, -5, -32, 5, -32, 5, 10, 16, 10, 16, 32, -16, 32)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ymrp3"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvwd163y18q06"]
+[gd_scene load_steps=20 format=3 uid="uid://8wqxwv1v5an2"]
 
-[ext_resource type="Script" uid="uid://cqt5n65ij2ijg" path="res://boss.gd" id="1_ymd2q"]
+[ext_resource type="Script" path="res://boss.gd" id="1_ymd2q"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="2_cf251"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aspn"]
