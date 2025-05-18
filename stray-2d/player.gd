@@ -112,7 +112,6 @@ func handle_movement() -> void:
 	
 	if direction and not can_walk:
 		idle = "stand"
-	print(timer.time_left)
 
 func _on_timer_timeout() -> void:
 	if scratching and idle == "idle": pass
