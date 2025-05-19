@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=16 format=3 uid="uid://dvk7fne1bul2v"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
 [ext_resource type="Script" uid="uid://kmq42mqynmr2" path="res://camera_2d.gd" id="2_nhd00"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="9_kek77"]
+[ext_resource type="Script" uid="uid://e1lbs0ttp433" path="res://scripts/JC/final_main.gd" id="10_4c57u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
@@ -547,4 +548,5 @@ scale = Vector2(-0.284923, 0.18698)
 texture = ExtResource("7_272bh")
 
 [node name="Final" parent="." instance=ExtResource("9_kek77")]
-position = Vector2(1241, 495)
+position = Vector2(1237, 494)
+script = ExtResource("10_4c57u")
