@@ -7,6 +7,7 @@ func _ready():
 	$Low.visible = false  # Garante que começa invisível
 	$Low2.visible = true
 	$High.visible = false  # Garante que começa invisível
+	$High.collision_enabled = false
 	if is_instance_valid(card):
 		$Card.visible = false
 	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -18,6 +19,7 @@ func _on_body_entered(body):
 			$Low.visible = true
 			$Low2.visible = false
 			$High.visible = true
+			$High.collision_enabled = true
 			if is_instance_valid(card):
 				$Card.visible = true
 			print("Player entrou no item!")
@@ -28,6 +30,7 @@ func _on_body_exited(body):
 			$Low.visible = false
 			$Low2.visible = true
 			$High.visible = false
+			$High.collision_enabled = true
 			if is_instance_valid(card):
 				$Card.visible = false
 			print("Player saiu do item!")
