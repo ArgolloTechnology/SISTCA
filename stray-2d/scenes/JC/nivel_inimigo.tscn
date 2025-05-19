@@ -415,11 +415,11 @@ texture = ExtResource("7_l2p6b")
 expand_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.384314)
+modulate = Color(1, 1, 1, 0.235294)
 z_index = 9
-offset_left = 336.0
-offset_top = -78.0
-offset_right = 975.0
-offset_bottom = 163.0
+offset_left = 335.0
+offset_top = -80.0
+offset_right = 974.0
+offset_bottom = 161.0
 texture = ExtResource("8_fp2wi")
 expand_mode = 3
