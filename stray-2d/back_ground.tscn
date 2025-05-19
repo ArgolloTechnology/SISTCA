@@ -40,7 +40,7 @@ texture = ExtResource("3_sbwnb")
 
 [node name="L2" type="Parallax2D" parent="."]
 z_index = -4
-scroll_scale = Vector2(0.6, 1)
+scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(288, 0)
 repeat_times = 2
 
@@ -52,7 +52,6 @@ texture = ExtResource("4_c8n83")
 z_index = -5
 repeat_size = Vector2(288, 162)
 repeat_times = 2
-follow_viewport = false
 
 [node name="Sprite" type="Sprite2D" parent="L1"]
 scale = Vector2(0.5, 0.5)

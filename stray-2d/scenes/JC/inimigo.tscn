@@ -152,9 +152,9 @@ shape = SubResource("RectangleShape2D_0aspn")
 position = Vector2(0, -12)
 scale = Vector2(1, 0.9375)
 sprite_frames = SubResource("SpriteFrames_se7i0")
-animation = &"death"
-frame = 7
-frame_progress = 1.0
+animation = &"walking"
+frame = 4
+frame_progress = 0.165214
 
 [node name="Detect_left" type="RayCast2D" parent="."]
 position = Vector2(-1, -3)
