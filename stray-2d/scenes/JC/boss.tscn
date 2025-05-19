@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyok7670vfgqb"]
+[gd_scene load_steps=22 format=3 uid="uid://lxw63c1owdm8"]
 
-[ext_resource type="Script" uid="uid://dsbchrr2fd6mn" path="res://scenes/JC/boss.gd" id="1_tfjbm"]
+[ext_resource type="Script" path="res://scenes/JC/boss.gd" id="1_tfjbm"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="2_sibut"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aspn"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_nujma"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="7_le08w"]
-[ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="8_aq45b"]
+[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="8_aq45b"]
 [ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_ft807"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="9_ana2u"]
 [ext_resource type="PackedScene" uid="uid://8wqxwv1v5an2" path="res://boss.tscn" id="9_jukch"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dkfm3vjtohl2d" path="res://Sprites/industrial/3 Objects/Ladder1.png" id="10_wm374"]
 [ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="11_3pm5q"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="11_l2423"]
-[ext_resource type="Script" path="res://area_2d.gd" id="11_uj1pa"]
+[ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://area_2d.gd" id="11_uj1pa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p7g2u"]
 distance = 1.0
@@ -577,7 +577,6 @@ position = Vector2(1051, 191)
 
 [node name="piston_left" parent="." instance=ExtResource("11_3pm5q")]
 position = Vector2(790, 159)
-metadata/piston_left = NodePath(".")
 
 [node name="piston_right" parent="." instance=ExtResource("11_3pm5q")]
 position = Vector2(1125, 160)
@@ -585,6 +584,7 @@ position = Vector2(1125, 160)
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1125, 158)
 script = ExtResource("11_uj1pa")
+boss_path = NodePath("../Boss")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-167.625, -7.5)
