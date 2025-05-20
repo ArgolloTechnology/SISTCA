@@ -24,6 +24,7 @@ func _on_resume_pressed():
 
 func _on_restart_pressed():
 	resume()
+	$PanelContainer/VBoxContainer/Restart.release_focus()
 	get_tree().reload_current_scene()
 
 func _on_quit_pressed():

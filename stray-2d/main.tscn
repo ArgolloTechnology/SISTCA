@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=51 format=4 uid="uid://dvk7fne1bul2v"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
 [ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_nhd00"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cyok7670vfgqb" path="res://scenes/JC/boss.tscn" id="13_ycdy4"]
 [ext_resource type="Script" uid="uid://d2k0phi2qkv5d" path="res://area_2d.gd" id="17_074og"]
 [ext_resource type="Script" uid="uid://dijksv0wyng2s" path="res://area_2d_2.gd" id="17_cegan"]
-[ext_resource type="PackedScene" uid="uid://60q2jfr711vy" path="res://scenes/pause_menu.tscn" id="17_yaehf"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://06do72h4vfcc" path="res://TextBox2.tscn" id="19_ryguw"]
 [ext_resource type="PackedScene" uid="uid://chelrlm847r88" path="res://TextBox.tscn" id="20_82xsv"]
@@ -2733,10 +2732,6 @@ tile_set = SubResource("TileSet_cegan")
 z_index = -1
 tile_map_data = PackedByteArray("AAAmAB0AAAAEAAUAAAA=")
 tile_set = SubResource("TileSet_ryguw")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("17_yaehf")]
 
 [node name="InitialBarrier" type="StaticBody2D" parent="."]
 
