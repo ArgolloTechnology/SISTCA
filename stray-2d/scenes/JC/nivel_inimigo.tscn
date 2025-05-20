@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b5ugwvq6xur7y"]
+[gd_scene load_steps=12 format=4 uid="uid://b5ugwvq6xur7y"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_ypd5n"]
 [ext_resource type="Script" path="res://scripts/JC/camera_2d.gd" id="2_b1tnb"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_l2p6b"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="8_fp2wi"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="9_qkni7"]
-[ext_resource type="Script" uid="uid://doi1dlwef8yfo" path="res://scripts/JC/final.gd" id="10_t7j0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8slf"]
 texture = ExtResource("4_b2amt")
@@ -433,4 +432,3 @@ expand_mode = 3
 
 [node name="Final" parent="." instance=ExtResource("9_qkni7")]
 position = Vector2(649, 31)
-script = ExtResource("10_t7j0p")
