@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://bvwd163y18q06"]
+[gd_scene load_steps=23 format=3 uid="uid://bvwd163y18q06"]
 
-[ext_resource type="Script" uid="uid://cqt5n65ij2ijg" path="res://scripts/JC/node_2d.gd" id="1_ymd2q"]
+[ext_resource type="Script" uid="uid://cqt5n65ij2ijg" path="res://scripts/JC/inimigo.gd" id="1_ymd2q"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="2_cf251"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aspn"]
@@ -134,22 +134,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8lr2"]
 size = Vector2(16.5, 5)
 
-[node name="Inimigo" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymd2q"]
+size = Vector2(15.5, 11.9063)
+
+[node name="Inimigo" type="RigidBody2D"]
+lock_rotation = true
 script = ExtResource("1_ymd2q")
 
-[node name="Damage_hitbox" type="Area2D" parent="."]
+[node name="deal_dmg_to_player" type="Area2D" parent="."]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deal_dmg_to_player"]
 position = Vector2(-1, -3)
 shape = SubResource("RectangleShape2D_0aspn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0, 0, 1, 1)
 position = Vector2(0, -12)
 scale = Vector2(1, 0.9375)
 sprite_frames = SubResource("SpriteFrames_se7i0")
 animation = &"walking"
+frame = 4
+frame_progress = 0.165214
 
 [node name="Detect_left" type="RayCast2D" parent="."]
 position = Vector2(-1, -3)
@@ -167,6 +172,10 @@ collision_mask = 2
 position = Vector2(-10.75, 1)
 shape = SubResource("RectangleShape2D_s8lr2")
 
-[connection signal="body_entered" from="Damage_hitbox" to="." method="_on_damage_hitbox_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_ymd2q")
+
+[connection signal="body_entered" from="deal_dmg_to_player" to="." method="_on_damage_hitbox_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Kill_hitbox" to="." method="_on_kill_hitbox_body_entered"]

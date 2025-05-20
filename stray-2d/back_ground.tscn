@@ -40,7 +40,7 @@ texture = ExtResource("3_sbwnb")
 
 [node name="L2" type="Parallax2D" parent="."]
 z_index = -4
-scroll_scale = Vector2(0.6, 1)
+scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(288, 0)
 repeat_times = 2
 
