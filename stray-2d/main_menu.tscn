@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci1rvie1gqvhd"]
+[gd_scene load_steps=8 format=3 uid="uid://c2yg0vy4hytfa"]
 
-[ext_resource type="Script" uid="uid://bwoe16d1783dk" path="res://scripts/JC/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Script" path="res://scripts/JC/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/industrial/2 Background/Background.png" id="2_fu7sn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew082"]
@@ -40,6 +40,7 @@ grow_vertical = 2
 script = ExtResource("1_7vrkn")
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_right = 1023.0
 offset_bottom = 575.0
 texture = ExtResource("2_fu7sn")
