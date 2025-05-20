@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="9_kek77"]
-[ext_resource type="Script" uid="uid://e1lbs0ttp433" path="res://scripts/JC/final_main.gd" id="10_4c57u"]
+[ext_resource type="Script" path="res://scripts/JC/final_main.gd" id="10_4c57u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
