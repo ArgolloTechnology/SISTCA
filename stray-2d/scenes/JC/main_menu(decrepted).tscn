@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://br1y3wvk5whyc"]
+[gd_scene load_steps=8 format=3 uid="uid://bbsr4b4j771h3"]
 
-[ext_resource type="Script" path="res://scripts/JC/main_menu.gd" id="1_y46rx"]
+[ext_resource type="Script" uid="uid://bwoe16d1783dk" path="res://scripts/JC/main_menu.gd" id="1_y46rx"]
 [ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/industrial/2 Background/Background.png" id="2_n7vjw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80nex"]
