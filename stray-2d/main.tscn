@@ -2747,7 +2747,7 @@ shape = SubResource("SegmentShape2D_074og")
 [node name="FinalBarrier" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalBarrier"]
-position = Vector2(1863, 351)
+position = Vector2(1863, 415)
 shape = SubResource("SegmentShape2D_074og")
 
 [node name="Roof" type="StaticBody2D" parent="."]
