@@ -4,7 +4,7 @@ extends Area2D
 @onready var gate = get_node("/root/Main/Gate")
 
 func _ready() -> void:
-	connect("body_entered", Callable(self, "_on_body_entered"))
+	pass#connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body):
 	if body.name == "Player" and not is_instance_valid(card):
