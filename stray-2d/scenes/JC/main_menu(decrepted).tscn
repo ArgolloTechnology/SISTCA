@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbsr4b4j771h3"]
 
-[ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/industrial/2 Background/Background.png" id="1_do3fa"]
-[ext_resource type="Script" uid="uid://bwoe16d1783dk" path="res://scripts/JC/main_menu.gd" id="1_wyxua"]
+[ext_resource type="Script" uid="uid://bwoe16d1783dk" path="res://scripts/JC/main_menu.gd" id="1_y46rx"]
+[ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/industrial/2 Background/Background.png" id="2_n7vjw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80nex"]
 bg_color = Color(0.180392, 0.176471, 0.156863, 0.752941)
@@ -34,13 +34,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wyxua")
+script = ExtResource("1_y46rx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1023.0
 offset_bottom = 575.0
-texture = ExtResource("1_do3fa")
+texture = ExtResource("2_n7vjw")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
