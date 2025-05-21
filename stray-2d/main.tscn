@@ -1,23 +1,22 @@
-[gd_scene load_steps=34 format=4 uid="uid://dvk7fne1bul2v"]
+[gd_scene load_steps=33 format=4 uid="uid://dvk7fne1bul2v"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_axhp0"]
-[ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_nhd00"]
+[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_axhp0"]
+[ext_resource type="Script" path="res://scripts/JC/camera_2d.gd" id="2_nhd00"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://back_ground.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bheadi0lx6iaq" path="res://Sprites/Lava/lava-tiles.png" id="6_vivmo"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://xou868q6uebq" path="res://Sprites/Luz/Overlay/2.png" id="9_efxa6"]
-[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://killzone.tscn" id="9_kek77"]
-[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://pistão.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://cptgjm0b3vxhg" path="res://Sprites/Luz/Overlay/5.png" id="10_w48qg"]
-[ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://scenes/JC/inimigo.tscn" id="12_dg77c"]
-[ext_resource type="PackedScene" uid="uid://cyok7670vfgqb" path="res://scenes/JC/boss.tscn" id="13_ycdy4"]
-[ext_resource type="Script" uid="uid://d2k0phi2qkv5d" path="res://area_2d.gd" id="17_074og"]
+[ext_resource type="PackedScene" uid="uid://lxw63c1owdm8" path="res://scenes/JC/boss.tscn" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://area_2d.gd" id="17_074og"]
 [ext_resource type="Script" uid="uid://dijksv0wyng2s" path="res://area_2d_2.gd" id="17_cegan"]
-[ext_resource type="PackedScene" uid="uid://60q2jfr711vy" path="res://scenes/pause_menu.tscn" id="17_yaehf"]
+[ext_resource type="PackedScene" uid="uid://c33x0144hqd0d" path="res://scenes/pause_menu.tscn" id="17_yaehf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
@@ -1955,12 +1954,6 @@ metadata/delay = 0.5
 [node name="Pistão3" parent="." instance=ExtResource("10_4c57u")]
 position = Vector2(1400, 480)
 metadata/delay = 1.0
-
-[node name="Inimigo2" parent="." instance=ExtResource("12_dg77c")]
-position = Vector2(888, 509)
-
-[node name="Inimigo3" parent="." instance=ExtResource("12_dg77c")]
-position = Vector2(1096, 509)
 
 [node name="Boss" parent="." instance=ExtResource("13_ycdy4")]
 position = Vector2(1617, 490)

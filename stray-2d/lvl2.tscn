@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dm4i22jsftt1g"]
+[gd_scene load_steps=18 format=4 uid="uid://dm4i22jsftt1g"]
 
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_nujma"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="7_le08w"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_ft807"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="9_ana2u"]
 [ext_resource type="PackedScene" uid="uid://8wqxwv1v5an2" path="res://boss.tscn" id="9_jukch"]
-[ext_resource type="Script" uid="uid://otxe60os112b" path="res://scripts/player.gd" id="9_vcnes"]
 [ext_resource type="Texture2D" uid="uid://dkfm3vjtohl2d" path="res://Sprites/industrial/3 Objects/Ladder1.png" id="10_wm374"]
 [ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="11_3pm5q"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="11_l2423"]
@@ -563,7 +562,6 @@ position = Vector2(542, 85)
 
 [node name="Player" parent="." instance=ExtResource("8_aq45b")]
 position = Vector2(817, 183)
-script = ExtResource("9_vcnes")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)

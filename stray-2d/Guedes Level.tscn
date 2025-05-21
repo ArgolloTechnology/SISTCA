@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://cflhox443k4i"]
 
-[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://player.tscn" id="1_1i6yf"]
-[ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://camera_2d.gd" id="2_p7wxo"]
-[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://back_ground.tscn" id="3_6stdn"]
+[ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_1i6yf"]
+[ext_resource type="Script" path="res://scripts/JC/camera_2d.gd" id="2_p7wxo"]
+[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_6stdn"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_dvi35"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="6_08tb1"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_d2un5"]
 [ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="8_1i6yf"]
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="8_iuhle"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="9_p7wxo"]
-[ext_resource type="PackedScene" path="res://killzone.tscn" id="10_6stdn"]
+[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="10_6stdn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
@@ -210,7 +210,7 @@ size = Vector2(175, 31)
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_1i6yf")]
-position = Vector2(226, 473)
+position = Vector2(287, 494)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
@@ -230,14 +230,12 @@ shape = SubResource("WorldBoundaryShape2D_4vx3i")
 position = Vector2(582, 416)
 
 [node name="Holofote1" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 1
 position = Vector2(584, 440)
 texture = ExtResource("6_08tb1")
 
 [node name="Holofote2" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 1
 position = Vector2(712, 440)
