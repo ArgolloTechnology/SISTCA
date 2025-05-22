@@ -1945,7 +1945,6 @@ shape = SubResource("SegmentShape2D_kek77")
 
 [node name="Pistão" parent="." instance=ExtResource("10_4c57u")]
 position = Vector2(1224, 480)
-metadata/delay = 1.0
 
 [node name="Pistão2" parent="." instance=ExtResource("10_4c57u")]
 position = Vector2(1311, 480)
@@ -1953,7 +1952,6 @@ metadata/delay = 0.5
 
 [node name="Pistão3" parent="." instance=ExtResource("10_4c57u")]
 position = Vector2(1400, 480)
-metadata/delay = 1.0
 
 [node name="Boss" parent="." instance=ExtResource("13_ycdy4")]
 position = Vector2(1617, 490)
