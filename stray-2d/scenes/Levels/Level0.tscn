@@ -1,7 +1,5 @@
-[gd_scene load_steps=14 format=4 uid="uid://b6s74cml3v37t"]
+[gd_scene load_steps=12 format=4 uid="uid://b6s74cml3v37t"]
 
-[ext_resource type="PackedScene" path="res://player.tscn" id="1_bpmuv"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="2_v6l7g"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_1dlab"]
 [ext_resource type="TileSet" uid="uid://c6kwav4kvu5ay" path="res://Buildings.tres" id="4_b2h86"]
 [ext_resource type="TileSet" uid="uid://dpdsb00yfs12d" path="res://Props.tres" id="5_5c8cy"]
@@ -9,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_4n4lh"]
 [ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="8_ummiy"]
 [ext_resource type="Texture2D" uid="uid://xou868q6uebq" path="res://Sprites/Luz/Overlay/2.png" id="9_2tpt6"]
-[ext_resource type="PackedScene" path="res://death_border.tscn" id="11_bpmuv"]
-[ext_resource type="PackedScene" path="res://scenes/pistão.tscn" id="11_xaxtn"]
+[ext_resource type="PackedScene" uid="uid://qk6qqmqpubhv" path="res://death_border.tscn" id="11_bpmuv"]
+[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="11_xaxtn"]
 
 [sub_resource type="Shader" id="Shader_mh33d"]
 code = "shader_type canvas_item;
@@ -37,8 +35,18 @@ shader_parameter/penumbra = 20.0
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_bpmuv")]
+[node name="Player" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(226, 490)
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
@@ -48,7 +56,6 @@ limit_left = 0
 limit_bottom = 544
 position_smoothing_enabled = true
 drag_vertical_enabled = true
-script = ExtResource("2_v6l7g")
 
 [node name="BackGround" parent="." instance=ExtResource("3_1dlab")]
 position = Vector2(414, 337)
