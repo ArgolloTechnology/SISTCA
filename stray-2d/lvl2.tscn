@@ -575,9 +575,12 @@ position = Vector2(1051, 191)
 
 [node name="piston_left" parent="." instance=ExtResource("11_3pm5q")]
 position = Vector2(790, 159)
+metadata/CloseTrigger = NodePath("../Area2D")
 
 [node name="piston_right" parent="." instance=ExtResource("11_3pm5q")]
 position = Vector2(1125, 160)
+metadata/OpenTrigger = NodePath("../Boss")
+metadata/CloseTrigger = NodePath("../Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1125, 158)
