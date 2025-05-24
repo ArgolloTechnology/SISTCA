@@ -110,7 +110,6 @@ func handle_movement() -> void:
 	
 	if direction and not can_walk:
 		idle = "stand"
-	print(timer.time_left)
 
 func _on_timer_timeout() -> void:
 	if scratching and idle == "idle": pass
@@ -173,3 +172,8 @@ func handle_dash(delta: float) -> void:
 
 	if dashing:
 		velocity.x = dash_direction * DASH_SPEED
+
+
+func _on_cooldown_timer_timeout() -> void:
+	pass # Replace with function body.
+	

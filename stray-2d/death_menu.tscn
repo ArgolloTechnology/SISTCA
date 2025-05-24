@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://qba8mm24qxj3"]
+
+[ext_resource type="Script" uid="uid://ced8ko1f7tjqt" path="res://death_menu.gd" id="1_dhhda"]
+
+[sub_resource type="Gradient" id="Gradient_1betx"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dhhda"]
+gradient = SubResource("Gradient_1betx")
+width = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eawuk"]
+bg_color = Color(0.180392, 0.176471, 0.156863, 0.752941)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.812206, 0.506629, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl4r0"]
+bg_color = Color(0.803922, 0.537255, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl2ex"]
+bg_color = Color(0.805727, 0.537583, 0, 1)
+
+[node name="Death Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dhhda")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1023.0
+offset_bottom = 575.0
+texture = SubResource("GradientTexture1D_dhhda")
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.5
+offset_top = 0.5
+offset_right = 182.5
+offset_bottom = 210.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eawuk")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 73
+
+[node name="Restart" type="Button" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gl4r0")
+text = "Restart
+"
+
+[node name="Quit" type="Button" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_nl2ex")
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 54.0
+offset_right = 739.0
+offset_bottom = 249.0
+theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Game Over !!!
+You Died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureRect/PanelContainer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="TextureRect/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

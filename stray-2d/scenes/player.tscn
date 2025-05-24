@@ -731,7 +731,7 @@ shape = SubResource("CircleShape2D_onrkg")
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_igxvt")
-animation = &"stand"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="VFX" type="Node2D" parent="."]

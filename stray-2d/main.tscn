@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=4 uid="uid://dvk7fne1bul2v"]
 
 [ext_resource type="PackedScene" uid="uid://ci2078p8jaqol" path="res://scenes/player.tscn" id="1_axhp0"]
-[ext_resource type="Script" path="res://scripts/JC/camera_2d.gd" id="2_nhd00"]
+[ext_resource type="Script" uid="uid://3co6rjn8gg4" path="res://scripts/JC/camera_2d.gd" id="2_nhd00"]
 [ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_7mycd"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cptgjm0b3vxhg" path="res://Sprites/Luz/Overlay/5.png" id="10_w48qg"]
 [ext_resource type="PackedScene" uid="uid://lxw63c1owdm8" path="res://scenes/JC/boss.tscn" id="13_ycdy4"]
 [ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://area_2d.gd" id="17_074og"]
-[ext_resource type="Script" uid="uid://dijksv0wyng2s" path="res://area_2d_2.gd" id="17_cegan"]
+[ext_resource type="Script" path="res://area_2d_2.gd" id="17_cegan"]
 [ext_resource type="PackedScene" uid="uid://c33x0144hqd0d" path="res://scenes/pause_menu.tscn" id="17_yaehf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
