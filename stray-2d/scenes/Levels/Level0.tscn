@@ -35,20 +35,7 @@ shader_parameter/penumbra = 20.0
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(226, 490)
-script = null
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Player#Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -43)
 offset = Vector2(48, 0)
 zoom = Vector2(4, 4)
@@ -154,7 +141,6 @@ texture = ExtResource("9_2tpt6")
 
 [node name="Pistão" parent="." instance=ExtResource("11_xaxtn")]
 position = Vector2(1212, 480)
-metadata/delay = 1.0
 
 [node name="Pistão2" parent="." instance=ExtResource("11_xaxtn")]
 position = Vector2(1292, 480)
@@ -162,7 +148,6 @@ metadata/delay = 0.5
 
 [node name="Pistão3" parent="." instance=ExtResource("11_xaxtn")]
 position = Vector2(1371, 480)
-metadata/delay = 1.0
 
 [node name="Death_Border" parent="." instance=ExtResource("11_bpmuv")]
 position = Vector2(370, 573)
