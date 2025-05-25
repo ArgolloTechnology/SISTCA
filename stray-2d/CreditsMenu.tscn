@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc7rn7df6ptm8"]
+
+[ext_resource type="PackedScene" uid="uid://o4bx4p6ot6n3" path="res://Credits.tscn" id="1_1s42i"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Credits" parent="." instance=ExtResource("1_1s42i")]

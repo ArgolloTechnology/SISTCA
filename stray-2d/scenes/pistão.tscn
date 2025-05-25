@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://xyar82yxh0pv"]
+[gd_scene load_steps=20 format=3 uid="uid://xyar82yxh0pv"]
 
 [ext_resource type="Script" path="res://scripts/pistao.gd" id="1_b2lu7"]
 [ext_resource type="Texture2D" uid="uid://ca6nia3xby3do" path="res://Sprites/industrial/4 Animated objects/Hammer.png" id="1_r0bnn"]
 [ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="2_r5w03"]
+[ext_resource type="AudioStream" uid="uid://cym5gn3y422jc" path="res://sounds/Metal.wav" id="4_8qnag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r5w03"]
 atlas = ExtResource("1_r0bnn")
@@ -152,6 +153,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [PackedVector2Array(-16, -22, -5, -22, -5, -32, 5, -32, 5, -22, 16, -22, 16, 0, -16, 0), PackedVector2Array(-16, -5, -5, -5, -5, -32, 5, -32, 5, -5, 16, -5, 16, 22, -16, 22), PackedVector2Array(-16, 12, -5, 12, -5, -32, 5, -32, 5, 12, 16, 12, 16, 31, -16, 31), PackedVector2Array(-16, 8, -5, 8, -5, -32, 5, -32, 5, 8, 16, 8, 16, 31, -16, 31), PackedVector2Array(-16, 10, -5, 10, -5, -32, 5, -32, 5, 10, 16, 10, 16, 32, -16, 32)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 3.6753,
+"start_offset": 1.4759,
+"stream": ExtResource("4_8qnag")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_r5w03"]
 resource_name = "idle"
@@ -193,6 +209,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [PackedVector2Array(-16, -22, -5, -22, -5, -32, 5, -32, 5, -22, 16, -22, 16, 0, -16, 0), PackedVector2Array(-16, -5, -5, -5, -5, -32, 5, -32, 5, -5, 16, -5, 16, 22, -16, 22), PackedVector2Array(-16, 12, -5, 12, -5, -32, 5, -32, 5, 12, 16, 12, 16, 31, -16, 31), PackedVector2Array(-16, 8, -5, 8, -5, -32, 5, -32, 5, 8, 16, 8, 16, 31, -16, 31), PackedVector2Array(-16, 10, -5, 10, -5, -32, 5, -32, 5, 10, 16, 10, 16, 32, -16, 32), PackedVector2Array(-16, 0, -5, 0, -5, -32, 5, -32, 5, 0, 16, 0, 16, 22, -16, 22), PackedVector2Array(-16, -10, -5, -10, -5, -32, 5, -32, 5, -10, 16, -10, 16, 12, -16, 12), PackedVector2Array(-16, -20, -5, -20, -5, -32, 5, -32, 5, -20, 16, -20, 16, 2, -16, 2)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 3.6753,
+"start_offset": 1.4759,
+"stream": ExtResource("4_8qnag")
+}],
+"times": PackedFloat32Array(0.25)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_0r0mu"]
 resource_name = "new_animation"
@@ -259,5 +290,10 @@ polygon = PackedVector2Array(-16, -22, -9, -22, -9, -32, 9, -32, 9, -22, 16, -22
 libraries = {
 &"": SubResource("AnimationLibrary_ymrp3")
 }
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+volume_db = 4.466
+max_distance = 160.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

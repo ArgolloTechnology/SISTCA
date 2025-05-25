@@ -54,6 +54,7 @@ func _on_damage_hitbox_body_entered(_body: Node2D) -> void:
 # Matar o inimigo
 func _on_kill_hitbox_body_entered(_body: Node2D) -> void:
 	killed = 0
+	$hurt.play()
 	animation.play("death")
 	call_deferred("killcat")
 

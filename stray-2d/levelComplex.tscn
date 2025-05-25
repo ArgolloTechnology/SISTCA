@@ -1,35 +1,35 @@
 [gd_scene load_steps=51 format=4 uid="uid://dvk7fne1bul2v"]
 
-[ext_resource type="PackedScene" uid="uid://boxskmrr4grdj" path="res://scenes/player.tscn" id="1_axhp0"]
-[ext_resource type="Script" uid="uid://kmq42mqynmr2" path="res://scripts/camera_2d.gd" id="2_nhd00"]
-[ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_7mycd"]
-[ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="4_lquwl"]
-[ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_7mycd"]
-[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="5_lquwl"]
-[ext_resource type="Texture2D" uid="uid://bheadi0lx6iaq" path="res://Sprites/Lava/lava-tiles.png" id="6_vivmo"]
-[ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="7_5vw27"]
-[ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="7_272bh"]
-[ext_resource type="Texture2D" uid="uid://xou868q6uebq" path="res://Sprites/Luz/Overlay/2.png" id="9_efxa6"]
-[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="9_kek77"]
-[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="10_4c57u"]
-[ext_resource type="Texture2D" uid="uid://cptgjm0b3vxhg" path="res://Sprites/Luz/Overlay/5.png" id="10_w48qg"]
-[ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://scenes/JC/inimigo.tscn" id="12_dg77c"]
-[ext_resource type="PackedScene" uid="uid://lxw63c1owdm8" path="res://scenes/JC/boss.tscn" id="13_ycdy4"]
-[ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://scripts/area_2d.gd" id="17_074og"]
-[ext_resource type="Script" uid="uid://dijksv0wyng2s" path="res://scripts/area_2d_2.gd" id="17_cegan"]
-[ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="19_cegan"]
-[ext_resource type="PackedScene" uid="uid://06do72h4vfcc" path="res://TextBox2.tscn" id="19_ryguw"]
-[ext_resource type="PackedScene" uid="uid://chelrlm847r88" path="res://TextBox.tscn" id="20_82xsv"]
-[ext_resource type="Script" uid="uid://c3dtq6sefc6lw" path="res://scripts/text_area_2d.gd" id="20_getpj"]
-[ext_resource type="Script" uid="uid://b10d6hl367an1" path="res://scripts/interruptor_trigger.gd" id="22_d13ii"]
-[ext_resource type="Script" uid="uid://3l6tlkr8w7ya" path="res://scripts/card_trigger.gd" id="24_1u8w0"]
-[ext_resource type="Script" uid="uid://5lddidkkiwvl" path="res://scripts/open_trigger.gd" id="25_0odxb"]
+[ext_resource type="PackedScene" uid="uid://boxskmrr4grdj" path="res://scenes/player.tscn" id="1_gerr6"]
+[ext_resource type="Script" uid="uid://kmq42mqynmr2" path="res://scripts/camera_2d.gd" id="2_ly118"]
+[ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_0kj8y"]
+[ext_resource type="Texture2D" uid="uid://dwkjp5s1scxlk" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Buildings.png" id="4_1hcg0"]
+[ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="5_py4bt"]
+[ext_resource type="Texture2D" uid="uid://bheadi0lx6iaq" path="res://Sprites/Lava/lava-tiles.png" id="6_7d0b5"]
+[ext_resource type="Texture2D" uid="uid://6ujl3rqxekmq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="7_01ajt"]
+[ext_resource type="Texture2D" uid="uid://31pmsog2gdeu" path="res://Sprites/Luz/Overlay/6.png" id="8_xbklq"]
+[ext_resource type="Texture2D" uid="uid://bhulpcnc7m2wc" path="res://Sprites/Luz/Overlay/8.png" id="9_4ow6j"]
+[ext_resource type="Texture2D" uid="uid://xou868q6uebq" path="res://Sprites/Luz/Overlay/2.png" id="10_1o3pi"]
+[ext_resource type="Texture2D" uid="uid://cptgjm0b3vxhg" path="res://Sprites/Luz/Overlay/5.png" id="11_1vo7s"]
+[ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="12_w7xiu"]
+[ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="13_5t0j6"]
+[ext_resource type="PackedScene" uid="uid://bvwd163y18q06" path="res://scenes/JC/inimigo.tscn" id="14_m0bsi"]
+[ext_resource type="PackedScene" uid="uid://lxw63c1owdm8" path="res://scenes/JC/boss.tscn" id="15_d1bni"]
+[ext_resource type="Script" uid="uid://ct46yjrqu2rjr" path="res://toggleLayer.gd" id="16_gerr6"]
+[ext_resource type="Script" uid="uid://dijksv0wyng2s" path="res://scripts/area_2d_2.gd" id="17_30w8w"]
+[ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="18_a20oc"]
+[ext_resource type="Script" uid="uid://c3dtq6sefc6lw" path="res://scripts/text_area_2d.gd" id="19_hhj2i"]
+[ext_resource type="PackedScene" uid="uid://chelrlm847r88" path="res://TextBox.tscn" id="20_xna5i"]
+[ext_resource type="Script" uid="uid://b10d6hl367an1" path="res://scripts/interruptor_trigger.gd" id="21_ofebe"]
+[ext_resource type="PackedScene" uid="uid://06do72h4vfcc" path="res://TextBox2.tscn" id="22_l8jgd"]
+[ext_resource type="Script" uid="uid://3l6tlkr8w7ya" path="res://scripts/card_trigger.gd" id="23_sjwgj"]
+[ext_resource type="Script" uid="uid://5lddidkkiwvl" path="res://scripts/open_trigger.gd" id="24_7broh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vx3i"]
 distance = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
-texture = ExtResource("4_7mycd")
+texture = ExtResource("4_1hcg0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -339,7 +339,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_272bh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d13ii"]
-texture = ExtResource("4_7mycd")
+texture = ExtResource("4_1hcg0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -629,7 +629,7 @@ texture = ExtResource("4_7mycd")
 sources/0 = SubResource("TileSetAtlasSource_d13ii")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
-texture = ExtResource("5_7mycd")
+texture = ExtResource("5_py4bt")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -5, -8, -5)
 0:0/0/physics_layer_0/polygon_0/one_way = true
@@ -765,7 +765,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2cqfq"]
-texture = ExtResource("6_vivmo")
+texture = ExtResource("6_7d0b5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1519,7 +1519,7 @@ a = Vector2(0, -10)
 size = Vector2(624, 63.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yaehf"]
-texture = ExtResource("4_7mycd")
+texture = ExtResource("4_1hcg0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1812,7 +1812,7 @@ sources/0 = SubResource("TileSetAtlasSource_yaehf")
 size = Vector2(148, 48)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_074og"]
-texture = ExtResource("4_7mycd")
+texture = ExtResource("4_1hcg0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2104,7 +2104,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_074og")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_getpj"]
-texture = ExtResource("4_7mycd")
+texture = ExtResource("4_1hcg0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2408,7 +2408,7 @@ size = Vector2(81, 48)
 size = Vector2(16, 18)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0odxb"]
-texture = ExtResource("5_7mycd")
+texture = ExtResource("5_py4bt")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2522,7 +2522,7 @@ a = Vector2(0, 41)
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_axhp0")]
+[node name="Player" parent="." instance=ExtResource("1_gerr6")]
 position = Vector2(230, 456)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2531,7 +2531,7 @@ offset = Vector2(48, 0)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
-script = ExtResource("2_nhd00")
+script = ExtResource("2_ly118")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(516, 513)
@@ -2539,7 +2539,7 @@ position = Vector2(516, 513)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_4vx3i")
 
-[node name="BackGround" parent="." instance=ExtResource("5_lquwl")]
+[node name="BackGround" parent="." instance=ExtResource("3_0kj8y")]
 position = Vector2(582, 416)
 
 [node name="Scene Back" type="TileMapLayer" parent="."]
@@ -2585,33 +2585,33 @@ modulate = Color(0.0196078, 0.929412, 0, 0.392157)
 z_index = 2
 position = Vector2(456, 509)
 rotation = -3.1391
-texture = ExtResource("4_lquwl")
+texture = ExtResource("7_01ajt")
 
 [node name="Luz2" type="Sprite2D" parent="."]
 modulate = Color(0.0196078, 0.929412, 0, 0.392157)
 z_index = 2
 position = Vector2(472, 509)
 rotation = -3.1391
-texture = ExtResource("4_lquwl")
+texture = ExtResource("7_01ajt")
 
 [node name="Luz3" type="Sprite2D" parent="."]
 modulate = Color(0.0196078, 0.929412, 0, 0.392157)
 z_index = 2
 position = Vector2(488, 509)
 rotation = -3.1391
-texture = ExtResource("4_lquwl")
+texture = ExtResource("7_01ajt")
 
 [node name="Holofote1" type="Sprite2D" parent="."]
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 2
 position = Vector2(584, 440)
-texture = ExtResource("4_lquwl")
+texture = ExtResource("7_01ajt")
 
 [node name="Holofote2" type="Sprite2D" parent="."]
 modulate = Color(0.756863, 0.262745, 0.298039, 0.752941)
 z_index = 2
 position = Vector2(712, 440)
-texture = ExtResource("4_lquwl")
+texture = ExtResource("7_01ajt")
 
 [node name="Fumo" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
@@ -2621,7 +2621,7 @@ offset_top = 335.0
 offset_right = 2313.0
 offset_bottom = 1539.0
 scale = Vector2(-0.284923, 0.18698)
-texture = ExtResource("7_272bh")
+texture = ExtResource("8_xbklq")
 
 [node name="Esgoto" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
@@ -2631,7 +2631,7 @@ offset_top = 335.0
 offset_right = 2313.0
 offset_bottom = 1540.0
 scale = Vector2(0.355363, 0.186016)
-texture = ExtResource("7_5vw27")
+texture = ExtResource("9_4ow6j")
 
 [node name="Sombras" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
@@ -2641,7 +2641,7 @@ offset_top = 335.0
 offset_right = 3822.0
 offset_bottom = 1539.0
 scale = Vector2(-0.284923, 0.18698)
-texture = ExtResource("9_efxa6")
+texture = ExtResource("10_1o3pi")
 
 [node name="Boss Background" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.227451)
@@ -2651,35 +2651,35 @@ offset_top = 335.0
 offset_right = 3785.0
 offset_bottom = 1539.0
 scale = Vector2(-0.284923, 0.18698)
-texture = ExtResource("10_w48qg")
+texture = ExtResource("11_1vo7s")
 
-[node name="Killzone" parent="." instance=ExtResource("9_kek77")]
+[node name="Killzone" parent="." instance=ExtResource("12_w7xiu")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(14, 5)
 shape = SubResource("SegmentShape2D_kek77")
 
-[node name="Pistão" parent="." instance=ExtResource("10_4c57u")]
+[node name="Pistão" parent="." instance=ExtResource("13_5t0j6")]
 position = Vector2(1224, 480)
 
-[node name="Pistão2" parent="." instance=ExtResource("10_4c57u")]
+[node name="Pistão2" parent="." instance=ExtResource("13_5t0j6")]
 position = Vector2(1311, 480)
 metadata/delay = 0.5
 
-[node name="Pistão3" parent="." instance=ExtResource("10_4c57u")]
+[node name="Pistão3" parent="." instance=ExtResource("13_5t0j6")]
 position = Vector2(1400, 480)
 
-[node name="Inimigo2" parent="." instance=ExtResource("12_dg77c")]
+[node name="Inimigo2" parent="." instance=ExtResource("14_m0bsi")]
 position = Vector2(888, 509)
 
-[node name="Inimigo3" parent="." instance=ExtResource("12_dg77c")]
+[node name="Inimigo3" parent="." instance=ExtResource("14_m0bsi")]
 position = Vector2(1096, 509)
 
-[node name="Boss" parent="." instance=ExtResource("13_ycdy4")]
+[node name="Boss" parent="." instance=ExtResource("15_d1bni")]
 position = Vector2(1617, 490)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("17_074og")
+script = ExtResource("16_gerr6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(840, 416.25)
@@ -2700,7 +2700,7 @@ tile_map_data = PackedByteArray("AADw////AAAJAAAAAADw/wAAAAAJAAEAAADw/wEAAAAJAAI
 tile_set = SubResource("TileSet_074og")
 
 [node name="Area2D2" type="Area2D" parent="."]
-script = ExtResource("17_cegan")
+script = ExtResource("17_30w8w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(648, 487)
@@ -2749,41 +2749,41 @@ shape = SubResource("SegmentShape2D_074og")
 position = Vector2(1267, 438)
 shape = SubResource("SegmentShape2D_cegan")
 
-[node name="Final" parent="." instance=ExtResource("19_cegan")]
+[node name="Final" parent="." instance=ExtResource("18_a20oc")]
 position = Vector2(1830, 483)
-metadata/NextLevelPath = "res://scenes/JC/nivel_inimigo.tscn"
+metadata/NextLevelPath = "res://scenes/Levels/Level 2.tscn"
 
 [node name="Text Trigger" type="Area2D" parent="."]
-script = ExtResource("20_getpj")
+script = ExtResource("19_hhj2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Text Trigger"]
 position = Vector2(647.5, 487)
 shape = SubResource("RectangleShape2D_getpj")
 
-[node name="TextBox" parent="." instance=ExtResource("20_82xsv")]
+[node name="TextBox" parent="." instance=ExtResource("20_xna5i")]
 
 [node name="Interruptor Trigger" type="Area2D" parent="."]
-script = ExtResource("22_d13ii")
+script = ExtResource("21_ofebe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interruptor Trigger"]
 position = Vector2(616, 439)
 shape = SubResource("RectangleShape2D_d13ii")
 
-[node name="TextBox2" parent="." instance=ExtResource("19_ryguw")]
+[node name="TextBox2" parent="." instance=ExtResource("22_l8jgd")]
 
 [node name="Gate" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AABbABwAAQAHAAMAACBbAB0AAQAHAAIAACA=")
 tile_set = SubResource("TileSet_lswn8")
 
 [node name="Card Trigger" type="Area2D" parent="."]
-script = ExtResource("24_1u8w0")
+script = ExtResource("23_sjwgj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Card Trigger"]
 position = Vector2(616, 472)
 shape = SubResource("RectangleShape2D_a6jrf")
 
 [node name="Open Trigger" type="Area2D" parent="."]
-script = ExtResource("25_0odxb")
+script = ExtResource("24_7broh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Open Trigger"]
 position = Vector2(1467, 439)

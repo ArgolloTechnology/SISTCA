@@ -1059,7 +1059,7 @@ cache/0/200/0/scale = 1.0
 [node name="Level 1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_yshs8")]
-position = Vector2(175, 565)
+position = Vector2(119, 572)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(2, -47)
