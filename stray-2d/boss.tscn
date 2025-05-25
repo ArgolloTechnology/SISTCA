@@ -1,6 +1,5 @@
-[gd_scene load_steps=40 format=3 uid="uid://8wqxwv1v5an2"]
+[gd_scene load_steps=39 format=3 uid="uid://8wqxwv1v5an2"]
 
-[ext_resource type="Script" uid="uid://cqt5n65ij2ijg" path="res://scripts/boss.gd" id="1_6xxrv"]
 [ext_resource type="Texture2D" uid="uid://4rtpxqmr3dy7" path="res://Sprites/Cat-Sheet.png" id="2_cf251"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xxrv"]
@@ -272,7 +271,6 @@ animations = [{
 }]
 
 [node name="Boss" type="RigidBody2D"]
-script = ExtResource("1_6xxrv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)

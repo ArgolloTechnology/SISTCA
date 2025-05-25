@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dm4i22jsftt1g"]
+[gd_scene load_steps=24 format=4 uid="uid://dm4i22jsftt1g"]
 
 [ext_resource type="PackedScene" uid="uid://boxskmrr4grdj" path="res://scenes/player.tscn" id="1_feiu6"]
 [ext_resource type="Script" uid="uid://kmq42mqynmr2" path="res://scripts/camera_2d.gd" id="2_l4cjo"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://8wqxwv1v5an2" path="res://boss.tscn" id="8_g2b7c"]
 [ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="9_27ao7"]
 [ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://scripts/area_2d.gd" id="10_ckfx7"]
+[ext_resource type="Script" uid="uid://di7w2x5n3t8e5" path="res://boss.gd" id="10_l4cjo"]
 [ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="11_h32g1"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="12_ynlrf"]
 
@@ -1319,6 +1320,7 @@ tile_set = SubResource("TileSet_c7ys4")
 
 [node name="Boss" parent="." instance=ExtResource("8_g2b7c")]
 position = Vector2(1051, 191)
+script = ExtResource("10_l4cjo")
 
 [node name="DashTimer" type="Timer" parent="Boss"]
 wait_time = 3.0
