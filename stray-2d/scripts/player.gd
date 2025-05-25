@@ -52,6 +52,9 @@ func apply_gravity(delta: float) -> void:
 func handle_jump() -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not jumping:
 		anim.play("jump")
+		var pitch = randf() * 4
+		$SFX/jump.pitch_scale = pitch
+		$SFX/jump.play()
 		jumping = true
 		jump.restart()
 		jump.emitting = true
@@ -163,6 +166,9 @@ func handle_dash(delta: float) -> void:
 		# DASH: Verifica se Shift ou Espaço foi pressionado
 		if (Input.is_key_pressed(KEY_SHIFT)) and dash_cooldown_timer <= 0.0 and can_walk:
 			dashing = true
+			var pitch = randf() * 4
+			$SFX/jump.pitch_scale = pitch
+			$SFX/jump.play()
 			dash_timer = DASH_DURATION
 			dash_cooldown_timer = DASH_COOLDOWN
 			dash_direction = sign(velocity.x)

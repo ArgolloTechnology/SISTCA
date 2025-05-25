@@ -1059,7 +1059,7 @@ cache/0/200/0/scale = 1.0
 [node name="Level 1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_yshs8")]
-position = Vector2(175, 565)
+position = Vector2(119, 572)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(2, -47)
@@ -1080,7 +1080,7 @@ position = Vector2(186, 416)
 
 [node name="Final" parent="." instance=ExtResource("7_yshs8")]
 position = Vector2(657, 399)
-metadata/NextLevelPath = "res://scenes/Levels/Level 2.tscn"
+metadata/NextLevelPath = "res://scenes/Levels/nivel_inimigo.tscn"
 
 [node name="Killzone" parent="." instance=ExtResource("8_yshs8")]
 position = Vector2(726, 1036)

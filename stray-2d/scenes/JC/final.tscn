@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://duk4h8n6p4j2b"]
 
-[ext_resource type="Script" uid="uid://doi1dlwef8yfo" path="res://scripts/JC/final.gd" id="1_2htgn"]
+[ext_resource type="Script" uid="uid://doi1dlwef8yfo" path="res://scripts/final.gd" id="1_2htgn"]
 [ext_resource type="Texture2D" uid="uid://blsvyccpvut84" path="res://Sprites/industrial/3 Objects/Bench.png" id="2_cqmwm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqmwm"]

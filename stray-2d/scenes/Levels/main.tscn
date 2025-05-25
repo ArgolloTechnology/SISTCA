@@ -18,10 +18,11 @@ distance = 1.0
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kek77"]
 a = Vector2(0, -10)
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tokei")]
 position = Vector2(226, 473)
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
@@ -31,14 +32,15 @@ position_smoothing_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("2_tl6rw")
 
+[node name="BackGround" parent="Player/Camera2D" instance=ExtResource("3_vun5y")]
+z_index = -10
+position = Vector2(65, -88)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(516, 513)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_4vx3i")
-
-[node name="BackGround" parent="." instance=ExtResource("3_vun5y")]
-position = Vector2(582, 416)
 
 [node name="Scene" type="TileMap" parent="."]
 tile_set = ExtResource("4_j5bw4")

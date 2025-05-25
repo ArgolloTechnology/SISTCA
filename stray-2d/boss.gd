@@ -97,6 +97,7 @@ func handle_movement(delta):
 
 func start_dash():
 	is_dashing = true
+	$Dash.play()
 	dash_timer = dash_duration
 
 func handle_dash(delta):
@@ -119,6 +120,7 @@ func _on_damage_hitbox_body_entered(body: Node2D) -> void:
 	if animation.animation == "sleep":
 		if damage_hitbox.get_overlapping_bodies().has(body):
 			lives -= 1
+			$Hurt.play()
 			print("Vidas: ", lives)
 			
 		if "velocity" in body:
