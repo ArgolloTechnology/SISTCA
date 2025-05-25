@@ -1284,7 +1284,7 @@ size = Vector2(382, 45)
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_feiu6")]
-position = Vector2(817, 185)
+position = Vector2(86, 468)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
@@ -1300,8 +1300,8 @@ position = Vector2(279, 497)
 shape = SubResource("WorldBoundaryShape2D_p7g2u")
 
 [node name="BackGround" parent="." instance=ExtResource("2_suwgl")]
-position = Vector2(878, 91)
-scale = Vector2(2.5, 2.5)
+position = Vector2(920, 211)
+scale = Vector2(3.5, 3.5)
 
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true

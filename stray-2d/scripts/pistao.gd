@@ -42,7 +42,7 @@ func Close(body):
 			$AnimationPlayer.play("close")
 			open = false
 			print("fechar")
-func  _process(delta: float) -> void:
+func  _process(_delta: float) -> void:
 	if isDoor:
 		if get_node_or_null(openTrigger) == null and close:
 			$AnimationPlayer.play_backwards("close")

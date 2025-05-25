@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dvk7fne1bul2v"]
 
-[ext_resource type="PackedScene" uid="uid://dyfc6tvelyxii" path="res://scenes/player.tscn" id="1_tokei"]
-[ext_resource type="Script" uid="uid://dnhts33mr0gu4" path="res://scripts/camera_2d.gd" id="2_tl6rw"]
+[ext_resource type="PackedScene" uid="uid://boxskmrr4grdj" path="res://scenes/player.tscn" id="1_tokei"]
+[ext_resource type="Script" uid="uid://kmq42mqynmr2" path="res://scripts/camera_2d.gd" id="2_tl6rw"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="3_vun5y"]
 [ext_resource type="TileSet" uid="uid://c6kwav4kvu5ay" path="res://Buildings.tres" id="4_j5bw4"]
 [ext_resource type="TileSet" uid="uid://dpdsb00yfs12d" path="res://Props.tres" id="5_8x6bw"]
@@ -132,7 +132,6 @@ shape = SubResource("SegmentShape2D_kek77")
 
 [node name="Pistão" parent="." instance=ExtResource("11_1hsnh")]
 position = Vector2(1212, 480)
-metadata/delay = 1.0
 
 [node name="Pistão2" parent="." instance=ExtResource("11_1hsnh")]
 position = Vector2(1292, 480)
@@ -140,4 +139,3 @@ metadata/delay = 0.5
 
 [node name="Pistão3" parent="." instance=ExtResource("11_1hsnh")]
 position = Vector2(1371, 480)
-metadata/delay = 1.0

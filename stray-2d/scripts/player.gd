@@ -147,7 +147,7 @@ func _on_run_timer_timeout() -> void:
 func _on_rest_time_timeout() -> void:
 	running = false
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	print("die")
 
 # DASH
