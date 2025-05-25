@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=4 uid="uid://dm4i22jsftt1g"]
+[gd_scene load_steps=23 format=4 uid="uid://dm4i22jsftt1g"]
 
 [ext_resource type="PackedScene" uid="uid://boxskmrr4grdj" path="res://scenes/player.tscn" id="1_feiu6"]
+[ext_resource type="Script" uid="uid://kmq42mqynmr2" path="res://scripts/camera_2d.gd" id="2_l4cjo"]
 [ext_resource type="PackedScene" uid="uid://rc2idrlp6x6n" path="res://scenes/Levels/back_ground.tscn" id="2_suwgl"]
 [ext_resource type="Texture2D" uid="uid://cpgjbxy8oql1j" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Props-01.png" id="3_l4cjo"]
 [ext_resource type="Texture2D" uid="uid://bghum0pf862wq" path="res://Sprites/Mapa/Sidescroller Shooter - Central City/Assets/Tiles.png" id="4_tefon"]
@@ -9,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bheadi0lx6iaq" path="res://Sprites/Lava/lava-tiles.png" id="7_tdbfg"]
 [ext_resource type="PackedScene" uid="uid://8wqxwv1v5an2" path="res://boss.tscn" id="8_g2b7c"]
 [ext_resource type="PackedScene" uid="uid://xyar82yxh0pv" path="res://scenes/pistão.tscn" id="9_27ao7"]
-[ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://area_2d.gd" id="10_ckfx7"]
+[ext_resource type="Script" uid="uid://b7ul3s7ty0btk" path="res://scripts/area_2d.gd" id="10_ckfx7"]
 [ext_resource type="PackedScene" uid="uid://f2bbiglymby6" path="res://scenes/killzone.tscn" id="11_h32g1"]
 [ext_resource type="PackedScene" uid="uid://duk4h8n6p4j2b" path="res://scenes/JC/final.tscn" id="12_ynlrf"]
 
@@ -1284,7 +1285,7 @@ size = Vector2(382, 45)
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_feiu6")]
-position = Vector2(86, 468)
+position = Vector2(759, 157)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -43)
@@ -1292,6 +1293,7 @@ offset = Vector2(48, 0)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("2_l4cjo")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(279, 497)

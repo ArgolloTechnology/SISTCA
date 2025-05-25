@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://o4bx4p6ot6n3"]
 
-[ext_resource type="Script" uid="uid://sq4fbm3wos0w" path="res://credits.gd" id="1_4qwwl"]
+[ext_resource type="Script" uid="uid://sq4fbm3wos0w" path="res://scripts/credits.gd" id="1_4qwwl"]
 [ext_resource type="Texture2D" uid="uid://vn35apylsvgw" path="res://Sprites/industrial/2 Background/Background.png" id="1_ynf4x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qwwl"]
