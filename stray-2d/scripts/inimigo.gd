@@ -4,6 +4,7 @@ var dir = 1
 var last_dir = 1
 var speed = 0
 var killed = 1
+var collider
 
 @onready var detect_left: RayCast2D = $Detect_left
 @onready var detect_right: RayCast2D = $Detect_right
@@ -21,11 +22,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if detect_left.is_colliding():
-		dir = 1
-		animation.flip_h = false
+		var collider = detect_left.get_collider()
+		if collider.is_in_group("cenario"):
+			dir = 1
+			animation.flip_h = false
 	if detect_right.is_colliding():
-		dir = -1
-		animation.flip_h = true
+		var collider = detect_right.get_collider()
+		if collider.is_in_group("cenario"):
+			dir = -1
+			animation.flip_h = true
 		
 	if (last_dir == dir): 
 		speed = speed + (4 * delta)
