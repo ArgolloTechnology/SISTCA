@@ -18,7 +18,7 @@ distance = 1.0
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kek77"]
 a = Vector2(0, -10)
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_tokei")]
 position = Vector2(226, 473)
